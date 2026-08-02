@@ -429,7 +429,7 @@ export default function Home() {
                 data-goatcounter-title="Clique no checkout — Plano Completo R$ 67"
                 data-goatcounter-no-session="1"
               >
-                Quero acesso completo por R$ 67 <span>→</span>
+                Quero começar agora <span>→</span>
               </a>
             </article>
           </div>
