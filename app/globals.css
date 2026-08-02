@@ -221,6 +221,10 @@ h3 { font-size: 25px; }
 .price small { font-size: 19px; font-weight: 900; }
 .payment { color: #70847f; font-size: 12px; text-align: center; }
 .featured .payment { color: #abc1bc; }
+.installment-price { display: flex; justify-content: center; align-items: baseline; gap: 8px; color: white; font-size: 24px; line-height: 1; text-align: center; }
+.installment-price strong:first-child { color: var(--mint); font-size: 34px; }
+.installment-price strong:last-child { font-size: 48px; letter-spacing: -.04em; }
+.cash-price { margin: 12px 0 0; color: #c9d9d5; font-size: 17px; font-weight: 800; text-align: center; }
 .installments { margin: 5px 0 0; color: var(--lime); font-size: 16px; font-weight: 900; text-align: center; }
 .price-card ul { min-height: 210px; margin: 32px 0; padding-top: 25px; border-top: 1px solid #d9e1dd; font-size: 14px; }
 .featured ul { border-color: rgba(255,255,255,.18); }

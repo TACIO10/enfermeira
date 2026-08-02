@@ -412,8 +412,8 @@ export default function Home() {
               <span className="popular">Condição especial</span>
               <span className="plan-tag">Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="price"><small>R$</small><strong>67</strong><small>,00</small></div>
-              <p className="payment">pagamento único</p>
+              <div className="installment-price"><strong>12x</strong> de <strong>R$ 6,80</strong></div>
+              <p className="cash-price">ou R$ 67 à vista</p>
               <ul>
                 <li>✓ Biblioteca completa de músicas</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>
