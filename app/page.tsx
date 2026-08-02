@@ -1,5 +1,3 @@
-const essentialCheckout =
-  "https://lastlink.com/p/CCE28D64F/checkout-payment/?utm_source=organic";
 const completeCheckout =
   "https://lastlink.com/p/CAA8A573E/checkout-payment/?utm_source=organic";
 
@@ -383,40 +381,39 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <span className="eyebrow">Escolha seu acesso</span>
-            <h2>Comece pelo essencial ou leve a preparação completa.</h2>
+            <span className="eyebrow">Oferta completa</span>
+            <h2>Tudo o que você recebe hoje.</h2>
             <p>Pagamento único e acesso liberado após a confirmação.</p>
           </div>
-          <div className="price-grid">
-            <article className="price-card">
-              <span className="plan-tag">Plano Essencial</span>
-              <h3>Para começar a revisar com música</h3>
-              <div className="price"><small>R$</small><strong>19</strong><small>,90</small></div>
-              <p className="payment">pagamento único</p>
-              <ul>
-                <li>✓ Método da Memória Musical</li>
-                <li>✓ Trilhas com assuntos essenciais</li>
-                <li>✓ Acesso pelo celular e computador</li>
-                <li>✓ Acesso imediato</li>
-              </ul>
-              <a
-                className="button secondary"
-                href={essentialCheckout}
-                data-goatcounter-click="checkout-plano-essencial-19-90"
-                data-goatcounter-title="Clique no checkout — Plano Essencial R$ 19,90"
-                data-goatcounter-no-session="1"
-              >
-                Quero o Plano Essencial <span>→</span>
-              </a>
-            </article>
+          <div className="package-value">
+            <span className="package-title">Valor total do pacote</span>
+            {[
+              ["♪", "Método da Memória Musical®", "R$ 197"],
+              ["✓", "Checklist", "R$ 27"],
+              ["Q", "Banco de Questões", "R$ 37"],
+              ["+", "Comunidade Exclusiva", "R$ 37"],
+            ].map(([icon, item, value]) => (
+              <div className="package-row" key={item}>
+                <span className="package-icon">{icon}</span>
+                <strong>{item}</strong>
+                <span>{value}</span>
+              </div>
+            ))}
+            <div className="package-total">
+              <span>De <s>R$ 298</s></span>
+              <p>Mas hoje você não paga R$ 298.</p>
+              <p>Nem R$ 197.</p>
+              <strong>Seu acesso completo sai por apenas:</strong>
+            </div>
+          </div>
 
+          <div className="price-grid">
             <article className="price-card featured">
-              <span className="popular">Melhor escolha</span>
+              <span className="popular">Condição especial</span>
               <span className="plan-tag">Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="price"><small>R$</small><strong>29</strong><small>,90</small></div>
+              <div className="price"><small>R$</small><strong>67</strong><small>,00</small></div>
               <p className="payment">pagamento único</p>
-              <p className="installments">ou 5x de R$ 6,63</p>
               <ul>
                 <li>✓ Biblioteca completa de músicas</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>
@@ -428,11 +425,11 @@ export default function Home() {
               <a
                 className="button primary"
                 href={completeCheckout}
-                data-goatcounter-click="checkout-plano-completo-29-90"
-                data-goatcounter-title="Clique no checkout — Plano Completo R$ 29,90"
+                data-goatcounter-click="checkout-plano-completo-67"
+                data-goatcounter-title="Clique no checkout — Plano Completo R$ 67"
                 data-goatcounter-no-session="1"
               >
-                Quero acesso completo <span>→</span>
+                Quero acesso completo por R$ 67 <span>→</span>
               </a>
             </article>
           </div>
