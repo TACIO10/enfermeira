@@ -296,13 +296,12 @@ export default function Home() {
                   <small>Ver o que você vai revisar <b>+</b></small>
                 </summary>
                 <div className="subject-details">
-                  <span className="subject-icon">{subject.icon}</span>
                   <div className="subject-copy">
-                    <strong className="playlist-status">🎵 {subject.status || "Playlist disponível"}</strong>
+                    <strong className="playlist-status">{subject.status || "Playlist disponível"}</strong>
                     <p>{subject.text}</p>
                     <h4>{index === 11 ? "Você recebe atualizações com assuntos como:" : "Você vai revisar:"}</h4>
                     <ul>{subject.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
-                    <div className="subject-value">🎵 Este é apenas um dos módulos disponíveis. No Plano Completo você libera acesso a todas as playlists e às futuras atualizações dos editais.</div>
+                    <div className="subject-value">Este é apenas um dos módulos disponíveis. No Plano Completo você libera acesso a todas as playlists e às futuras atualizações dos editais.</div>
                   </div>
                 </div>
               </details>
