@@ -289,29 +289,25 @@ export default function Home() {
           </div>
           <div className="subject-grid">
             {subjects.map((subject, index) => (
-              <a key={subject.title} href={`#tema-${index + 1}`} className="subject-card">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{subject.title}</strong>
-                <small>Ver o que você vai revisar <b>→</b></small>
-              </a>
+              <details key={subject.title} className="subject-card">
+                <summary>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{subject.title}</strong>
+                  <small>Ver o que você vai revisar <b>+</b></small>
+                </summary>
+                <div className="subject-details">
+                  <span className="subject-icon">{subject.icon}</span>
+                  <div className="subject-copy">
+                    <strong className="playlist-status">🎵 {subject.status || "Playlist disponível"}</strong>
+                    <p>{subject.text}</p>
+                    <h4>{index === 11 ? "Você recebe atualizações com assuntos como:" : "Você vai revisar:"}</h4>
+                    <ul>{subject.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
+                    <div className="subject-value">🎵 Este é apenas um dos módulos disponíveis. No Plano Completo você libera acesso a todas as playlists e às futuras atualizações dos editais.</div>
+                  </div>
+                </div>
+              </details>
             ))}
           </div>
-          {subjects.map((subject, index) => (
-            <div className="subject-modal" id={`tema-${index + 1}`} key={`modal-${subject.title}`}>
-              <a className="modal-backdrop" href="#conteudos" aria-label="Fechar explicação" />
-              <article role="dialog" aria-modal="true" aria-labelledby={`tema-titulo-${index + 1}`}>
-                <a className="modal-close" href="#conteudos" aria-label="Fechar explicação">×</a>
-                <span className="modal-number">{subject.icon} {String(index + 1).padStart(2, "0")}</span>
-                <h3 id={`tema-titulo-${index + 1}`}>{subject.title}</h3>
-                <strong className="playlist-status">🎵 {subject.status || "Playlist disponível"}</strong>
-                <p>{subject.text}</p>
-                <h4>{index === 11 ? "Você recebe atualizações com assuntos como:" : "Você vai revisar:"}</h4>
-                <ul>{subject.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
-                <div className="modal-value">🎵 Este é apenas um dos módulos disponíveis. No Plano Completo você libera acesso a todas as playlists e às futuras atualizações dos editais.</div>
-                <a className="button primary modal-cta" href="#oferta">Quero acessar todas as playlists <span>→</span></a>
-              </article>
-            </div>
-          ))}
           <div className="center-cta">
             <a className="button dark-button" href="#oferta">Quero escolher meu acesso <span>↓</span></a>
           </div>
