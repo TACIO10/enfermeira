@@ -2,18 +2,18 @@ const completeCheckout =
   "https://lastlink.com/p/CAA8A573E/checkout-payment/?utm_source=organic";
 
 const subjects = [
-  "Sistema Único de Saúde (SUS)",
-  "Ética em Enfermagem",
-  "Saúde Coletiva",
-  "Farmacologia",
-  "Urgência e Emergência",
-  "Biossegurança",
-  "Saúde da Mulher",
-  "Saúde da Criança",
-  "Processo de Enfermagem",
-  "Administração de Medicamentos",
-  "Legislação em Enfermagem",
-  "Outros temas dos principais editais",
+  { icon: "🩺", title: "Sistema Único de Saúde (SUS)", text: "Memorize os principais conceitos do SUS através de músicas criadas com base nos conteúdos mais cobrados em concursos.", topics: ["Princípios e Diretrizes", "Leis 8.080 e 8.142", "Organização do SUS", "Redes de Atenção à Saúde", "Participação Social"] },
+  { icon: "⚖️", title: "Ética em Enfermagem", text: "Revise os principais conteúdos de Ética e Legislação de forma simples e repetitiva.", topics: ["Código de Ética", "Direitos e deveres", "Responsabilidade profissional", "Infrações éticas", "Exercício da profissão"] },
+  { icon: "🌎", title: "Saúde Coletiva", text: "Aprenda os conceitos fundamentais cobrados nas provas de Saúde Coletiva.", topics: ["Promoção da Saúde", "Vigilância em Saúde", "Epidemiologia", "Atenção Primária", "Políticas Públicas"] },
+  { icon: "💊", title: "Farmacologia", text: "Reforce os principais medicamentos e conceitos cobrados nos concursos.", topics: ["Classes de medicamentos", "Administração", "Efeitos adversos", "Interações medicamentosas", "Cuidados de Enfermagem"] },
+  { icon: "🚑", title: "Urgência e Emergência", text: "Revise protocolos e condutas essenciais para provas de concursos.", topics: ["PCR", "SBV", "Atendimento inicial", "Trauma", "Urgências clínicas"] },
+  { icon: "🦺", title: "Biossegurança", text: "Memorize as principais normas de segurança cobradas nas provas.", topics: ["EPIs", "Precauções padrão", "Isolamentos", "Controle de infecção", "Segurança do paciente"] },
+  { icon: "🤰", title: "Saúde da Mulher", text: "Reforce os conteúdos mais cobrados sobre assistência à saúde da mulher.", topics: ["Pré-natal", "Puerpério", "Planejamento familiar", "Ginecologia", "Obstetrícia"] },
+  { icon: "👶", title: "Saúde da Criança", text: "Aprenda os principais temas de Pediatria e Saúde da Criança.", topics: ["Crescimento e desenvolvimento", "Imunização", "Aleitamento materno", "Principais doenças", "Assistência de Enfermagem"] },
+  { icon: "📋", title: "Processo de Enfermagem", text: "Memorize todas as etapas do Processo de Enfermagem.", topics: ["SAE", "Diagnósticos", "Planejamento", "Implementação", "Avaliação"] },
+  { icon: "💉", title: "Administração de Medicamentos", text: "Revise os principais conceitos para evitar erros e acertar questões.", topics: ["Vias de administração", "Cálculo de medicamentos", "Diluições", "Segurança do paciente", "Administração segura"] },
+  { icon: "📜", title: "Legislação em Enfermagem", text: "Memorize as principais leis e normas da profissão.", topics: ["Lei do Exercício Profissional", "COFEN", "COREN", "Responsabilidades legais", "Direitos do profissional"] },
+  { icon: "🎧", title: "Outros temas dos principais editais", status: "Playlist em constante atualização", text: "Além dos temas principais, você terá acesso a novas playlists adicionadas conforme os editais forem sendo publicados.", topics: ["Saúde do Idoso", "Saúde Mental", "Centro Cirúrgico", "CME", "Hemoterapia", "Oncologia", "Outros conteúdos recorrentes dos concursos"] },
 ];
 
 const audios = [
@@ -289,12 +289,29 @@ export default function Home() {
           </div>
           <div className="subject-grid">
             {subjects.map((subject, index) => (
-              <div key={subject}>
+              <a key={subject.title} href={`#tema-${index + 1}`} className="subject-card">
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{subject}</strong>
-              </div>
+                <strong>{subject.title}</strong>
+                <small>Ver o que você vai revisar <b>→</b></small>
+              </a>
             ))}
           </div>
+          {subjects.map((subject, index) => (
+            <div className="subject-modal" id={`tema-${index + 1}`} key={`modal-${subject.title}`}>
+              <a className="modal-backdrop" href="#conteudos" aria-label="Fechar explicação" />
+              <article role="dialog" aria-modal="true" aria-labelledby={`tema-titulo-${index + 1}`}>
+                <a className="modal-close" href="#conteudos" aria-label="Fechar explicação">×</a>
+                <span className="modal-number">{subject.icon} {String(index + 1).padStart(2, "0")}</span>
+                <h3 id={`tema-titulo-${index + 1}`}>{subject.title}</h3>
+                <strong className="playlist-status">🎵 {subject.status || "Playlist disponível"}</strong>
+                <p>{subject.text}</p>
+                <h4>{index === 11 ? "Você recebe atualizações com assuntos como:" : "Você vai revisar:"}</h4>
+                <ul>{subject.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul>
+                <div className="modal-value">🎵 Este é apenas um dos módulos disponíveis. No Plano Completo você libera acesso a todas as playlists e às futuras atualizações dos editais.</div>
+                <a className="button primary modal-cta" href="#oferta">Quero acessar todas as playlists <span>→</span></a>
+              </article>
+            </div>
+          ))}
           <div className="center-cta">
             <a className="button dark-button" href="#oferta">Quero escolher meu acesso <span>↓</span></a>
           </div>
