@@ -37,6 +37,30 @@ const audios = [
   },
 ];
 
+const genreSamples = [
+  {
+    number: "01",
+    genre: "Sertanejo",
+    title: "Pressão Alta, Atenção",
+    description: "Uma revisão musical sobre hipertensão em ritmo sertanejo.",
+    src: "/media/pressao-alta-atencao.mp3",
+  },
+  {
+    number: "02",
+    genre: "MPB",
+    title: "Pressão na Medida Certa",
+    description: "Conceitos importantes sobre pressão arterial em uma faixa de MPB.",
+    src: "/media/pressao-medida-certa.mp3",
+  },
+  {
+    number: "03",
+    genre: "Pagode",
+    title: "Números do Diabetes",
+    description: "Valores e conceitos sobre diabetes apresentados em ritmo de pagode.",
+    src: "/media/numeros-diabetes.mp3",
+  },
+];
+
 const bonuses = [
   {
     number: "01",
@@ -249,6 +273,31 @@ export default function Home() {
                   <li>Cálculo e diluição de medicamentos</li>
                   <li>Segurança na administração</li>
                 </ul>
+              </div>
+            </section>
+
+            <section className="sample-collection genre-collection">
+              <div className="collection-heading">
+                <div>
+                  <span className="collection-index">Outros estilos musicais</span>
+                  <h3>Sertanejo, MPB e pagode para revisar</h3>
+                </div>
+                <span className="collection-count">3 novas amostras</span>
+              </div>
+              <div className="audio-grid">
+                {genreSamples.map((audio) => (
+                  <article className="audio-card genre-audio-card" key={audio.title}>
+                    <div className="audio-top">
+                      <span>Faixa {audio.number}</span>
+                      <span className="genre-label">{audio.genre}</span>
+                    </div>
+                    <h4>{audio.title}</h4>
+                    <p>{audio.description}</p>
+                    <audio controls preload="none" aria-label={`Ouvir ${audio.title} em ritmo de ${audio.genre}`}>
+                      <source src={audio.src} type="audio/mpeg" />
+                    </audio>
+                  </article>
+                ))}
               </div>
             </section>
           </div>
