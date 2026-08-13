@@ -477,9 +477,9 @@ export default function Home() {
               <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="annual-price"><small>R$</small><strong>16,42</strong><span>/mês</span></div>
+              <div className="annual-price"><small>R$</small><strong>19,99</strong><span>/mês</span></div>
               <p className="annual-payment">12x de R$ 19,99 no cartão · ou R$ 197 à vista</p>
-              <span className="value-badge">75% mais barato que o mensal</span>
+              <span className="value-badge">70% mais barato que o mensal</span>
               <ul>
                 <li>✓ Tudo do Plano Essencial</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>
