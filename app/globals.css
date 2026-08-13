@@ -239,6 +239,11 @@ h3 { font-size: 25px; }
 .single-price strong { font-size: 74px; line-height: .85; letter-spacing: -.07em; }
 .single-price small { font-size: 19px; font-weight: 900; }
 .single-price .price-period { align-self: flex-end; margin: 0 0 3px 7px; color: #b8cbc6; font-size: 14px; font-weight: 800; }
+.annual-price { display: flex; justify-content: center; align-items: baseline; color: var(--mint); line-height: 1; }
+.annual-price strong { font-size: 58px; letter-spacing: -.055em; }
+.annual-price small { margin-right: 7px; font-size: 23px; font-weight: 900; }
+.annual-price span { margin-left: 8px; color: #b8cbc6; font-size: 14px; font-weight: 800; }
+.annual-payment { margin: 10px 0 0; color: #9fb8b2; font-size: 13px; text-align: center; }
 .price { display: flex; justify-content: center; align-items: flex-start; margin-bottom: 0; }
 .price strong { font-size: 74px; line-height: .85; letter-spacing: -.07em; }
 .price small { font-size: 19px; font-weight: 900; }
