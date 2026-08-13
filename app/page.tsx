@@ -1,5 +1,7 @@
+const essentialCheckout =
+  "https://lastlink.com/p/C9E42D93C/checkout-payment/?utm_source=organic";
 const completeCheckout =
-  "https://lastlink.com/p/CAA8A573E/checkout-payment/?utm_source=organic";
+  "https://lastlink.com/p/C2D975DAB/checkout-payment/?utm_source=organic";
 
 const subjects = [
   { icon: "🩺", title: "Sistema Único de Saúde (SUS)", text: "Memorize os principais conceitos do SUS através de músicas criadas com base nos conteúdos mais cobrados em concursos.", topics: ["Princípios e Diretrizes", "Leis 8.080 e 8.142", "Organização do SUS", "Redes de Atenção à Saúde", "Participação Social"] },
@@ -442,55 +444,58 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <span className="eyebrow">Oferta completa</span>
-            <h2>Tudo o que você recebe hoje.</h2>
-            <p>Pagamento único e acesso liberado após a confirmação.</p>
-          </div>
-          <div className="package-value">
-            <span className="package-title">Valor total do pacote</span>
-            {[
-              ["♪", "Método da Memória Musical®", "R$ 197"],
-              ["✓", "Checklist", "R$ 27"],
-              ["Q", "Banco de Questões", "R$ 37"],
-              ["+", "Comunidade Exclusiva", "R$ 37"],
-            ].map(([icon, item, value]) => (
-              <div className="package-row" key={item}>
-                <span className="package-icon">{icon}</span>
-                <strong>{item}</strong>
-                <span>{value}</span>
-              </div>
-            ))}
-            <div className="package-total">
-              <span>De <s>R$ 298</s></span>
-              <p>Mas hoje você não paga R$ 298.</p>
-              <p>Nem R$ 197.</p>
-              <strong>Seu acesso completo sai por apenas:</strong>
-            </div>
+            <span className="eyebrow">Escolha seu acesso</span>
+            <h2>Comece no seu ritmo ou leve a preparação completa.</h2>
+            <p>Os dois planos têm acesso imediato e garantia de 30 dias.</p>
           </div>
 
           <div className="price-grid">
-            <article className="price-card featured">
-              <span className="popular">Condição especial</span>
-              <span className="plan-tag">Plano Completo</span>
-              <h3>Todo o método e todos os bônus</h3>
-              <div className="installment-price"><strong>12x</strong> de <strong>R$ 6,80</strong></div>
-              <p className="cash-price">ou R$ 67 à vista</p>
+            <article className="price-card essential-plan">
+              <span className="price-ribbon essential-ribbon">Para começar</span>
+              <span className="plan-tag">Plano Essencial</span>
+              <h3>Acesso ao Método da Memória Musical</h3>
+              <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small></div>
+              <p className="cash-price light-copy">pagamento único</p>
               <ul>
                 <li>✓ Biblioteca completa de músicas</li>
-                <li>✓ Checklist dos assuntos mais cobrados</li>
-                <li>✓ Banco de questões comentadas</li>
-                <li>✓ Comunidade exclusiva</li>
-                <li>✓ Novas músicas e atualizações</li>
-                <li>✓ Suporte</li>
+                <li>✓ Playlists organizadas por disciplina</li>
+                <li>✓ Acesso pelo celular e computador</li>
+                <li>✓ Atualizações das músicas</li>
               </ul>
               <a
-                className="button primary"
-                href={completeCheckout}
-                data-goatcounter-click="checkout-plano-completo-67"
-                data-goatcounter-title="Clique no checkout — Plano Completo R$ 67"
+                className="button price-button essential-button"
+                href={essentialCheckout}
+                data-goatcounter-click="checkout-plano-essencial-67"
+                data-goatcounter-title="Clique no checkout — Plano Essencial R$ 67"
                 data-goatcounter-no-session="1"
               >
-                Quero começar agora <span>→</span>
+                Quero o Plano Essencial <span>→</span>
+              </a>
+            </article>
+
+            <article className="price-card featured">
+              <span className="price-ribbon complete-ribbon">Melhor escolha</span>
+              <span className="plan-tag">Plano Completo</span>
+              <h3>Todo o método e todos os bônus</h3>
+              <div className="installment-price"><strong>12x</strong> de <strong>R$ 19,99</strong></div>
+              <p className="cash-price">ou R$ 197 à vista</p>
+              <span className="value-badge">Leve todos os bônus</span>
+              <ul>
+                <li>✓ Tudo do Plano Essencial</li>
+                <li>✓ Checklist dos assuntos mais cobrados</li>
+                <li>✓ Banco de questões comentadas</li>
+                <li>✓ Comunidade exclusiva de alunos</li>
+                <li>✓ Novas disciplinas e atualizações</li>
+                <li>✓ Suporte prioritário</li>
+              </ul>
+              <a
+                className="button primary price-button"
+                href={completeCheckout}
+                data-goatcounter-click="checkout-plano-completo-197"
+                data-goatcounter-title="Clique no checkout — Plano Completo R$ 197"
+                data-goatcounter-no-session="1"
+              >
+                Quero o Plano Completo <span>→</span>
               </a>
             </article>
           </div>
