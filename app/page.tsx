@@ -454,8 +454,8 @@ export default function Home() {
               <span className="price-ribbon essential-ribbon">Para começar</span>
               <span className="plan-tag">Plano Essencial</span>
               <h3>Acesso ao Método da Memória Musical</h3>
-              <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small></div>
-              <p className="cash-price light-copy">pagamento único</p>
+              <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small><span className="price-period">/mês</span></div>
+              <p className="cash-price light-copy">cobrança mensal recorrente</p>
               <ul>
                 <li>✓ Biblioteca completa de músicas</li>
                 <li>✓ Playlists organizadas por disciplina</li>
@@ -469,7 +469,7 @@ export default function Home() {
                 data-goatcounter-title="Clique no checkout — Plano Essencial R$ 67"
                 data-goatcounter-no-session="1"
               >
-                Quero o Plano Essencial <span>→</span>
+                Assinar mensal por R$ 67 <span>→</span>
               </a>
             </article>
 
