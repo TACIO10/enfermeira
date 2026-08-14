@@ -317,7 +317,7 @@ export default function Home() {
       <section className="fit section">
         <div className="wrap fit-grid">
           <div className="fit-visual">
-            <img src="/media/fernanda-virada.webp" alt="Fones de ouvido sobre materiais de estudo" />
+            <img src="/media/fernanda-virada.webp" alt="Fones de ouvido sobre materiais de estudo" loading="lazy" decoding="async" />
             <div className="time-badge"><strong>20</strong><span>minutos<br />por dia</span></div>
           </div>
           <div>
@@ -418,7 +418,7 @@ export default function Home() {
           <div className="bonus-grid">
             {bonuses.map((bonus) => (
               <article key={bonus.title}>
-                <img src={bonus.image} alt={`Capa: ${bonus.title}`} />
+                <img src={bonus.image} alt={`Capa: ${bonus.title}`} loading="lazy" decoding="async" />
                 <div className="bonus-copy">
                   <span>Bônus {bonus.number}</span>
                   <h3>{bonus.title}</h3>
@@ -443,7 +443,7 @@ export default function Home() {
               ["depoimento-camila.webp", "Depoimento de Camila Santos"],
               ["depoimento-amanda.webp", "Depoimento de Amanda Ferreira"],
             ].map(([image, alt]) => (
-              <figure key={image}><img src={`/media/${image}`} alt={alt} /></figure>
+              <figure key={image}><img src={`/media/${image}`} alt={alt} loading="lazy" decoding="async" /></figure>
             ))}
           </div>
         </div>
