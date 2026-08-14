@@ -74,6 +74,7 @@ h3 { font-size: 25px; }
 .nav-link { padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.5); color: white; font-size: 14px; text-decoration: none; }
 .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 60px; align-items: center; padding: 68px 0 100px; }
 .lead { max-width: 670px; margin-bottom: 34px; color: #d3e1de; font-size: 20px; }
+.hero-video { width: 100%; max-width: 400px; margin: 28px auto 30px; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: #000; box-shadow: 0 22px 55px rgba(0,0,0,.34); }
 .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .button {
   display: inline-flex; align-items: center; justify-content: center; gap: 24px;

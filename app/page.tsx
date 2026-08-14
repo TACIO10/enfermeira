@@ -104,6 +104,14 @@ export default function Home() {
               Enfermagem em apenas <em>20 minutos por dia</em>, sem depender apenas
               de PDFs e videoaulas.
             </h1>
+            <div
+              className="hero-video"
+              aria-label="Vídeo de apresentação do Método da Memória Musical"
+              dangerouslySetInnerHTML={{
+                __html:
+                  '<vturb-smartplayer id="vid-6a7f903d9b544b5366ba4beb" style="display:block;margin:0 auto;width:100%;max-width:400px"><div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black"></div></vturb-smartplayer>',
+              }}
+            />
             <p className="lead">
               Reforce os assuntos mais cobrados com músicas criadas para acompanhar
               seus plantões, deslocamentos e os poucos minutos livres do dia.
