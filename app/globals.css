@@ -79,7 +79,7 @@ h3 { font-size: 25px; }
 .button {
   display: inline-flex; align-items: center; justify-content: center; gap: 24px;
   min-height: 58px; padding: 0 25px; border: 1px solid transparent; border-radius: 7px;
-  font-size: 15px; font-weight: 900; text-decoration: none; transition: transform .2s, box-shadow .2s;
+  cursor: pointer; font-size: 15px; font-weight: 900; text-decoration: none; transition: transform .2s, box-shadow .2s;
 }
 .button:hover { transform: translateY(-2px); }
 .button.primary { background: var(--lime); color: var(--deep-2); box-shadow: 0 12px 30px rgba(3,22,19,.25); }

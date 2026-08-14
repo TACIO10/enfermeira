@@ -117,9 +117,9 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#experimente">
+              <button className="button primary" type="button" data-scroll-target="experimente">
                 Ouvir uma amostra grátis <span>→</span>
-              </a>
+              </button>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
             </div>
             <div className="hero-proof">
