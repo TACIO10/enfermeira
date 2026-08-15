@@ -63,6 +63,20 @@ const genreSamples = [
   },
 ];
 
+const sampleGroups = [
+  { id: "sus", label: "Saúde Pública e SUS", footer: "3 faixas disponíveis nesta trilha", tracks: audios },
+  {
+    id: "farmacologia",
+    label: "Farmacologia",
+    footer: "2 faixas disponíveis nesta trilha",
+    tracks: [
+      { number: "01", title: "Classe Farmacológica", description: "Fundamentos e classes de medicamentos.", src: "/media/classe-farmacologica.mp3" },
+      { number: "02", title: "Mecanismo de Ação", description: "Como os medicamentos produzem seus efeitos.", src: "/media/mecanismo-de-acao.mp3" },
+    ],
+  },
+  { id: "estilos", label: "Outros estilos", footer: "Sertanejo, MPB e pagode", tracks: genreSamples },
+];
+
 const bonuses = [
   {
     number: "01",
@@ -205,111 +219,37 @@ export default function Home() {
       </section>
 
       <section className="listen section" id="experimente">
-        <div className="wrap">
+        <div className="wrap narrow">
           <div className="section-heading center listen-heading">
-            <span className="eyebrow">Experimente o método</span>
-            <h2>Escolha uma disciplina e dê o play.</h2>
-            <p>Conheça a experiência de revisar por músicas antes de escolher seu acesso.</p>
+            <span className="eyebrow light">Amostras gratuitas</span>
+            <h2>Ouça agora. Sem cadastro, sem compromisso.</h2>
+            <p>Estas são faixas reais do método. Escolha uma matéria e comprove você mesmo.</p>
           </div>
 
-          <div className="sample-library">
-            <section className="sample-collection">
-              <div className="collection-heading">
-                <div>
-                  <span className="collection-index">Disciplina 01</span>
-                  <h3>Saúde Pública e SUS</h3>
-                </div>
-                <span className="collection-count">3 amostras disponíveis</span>
-              </div>
-              <div className="audio-grid">
-                {audios.map((audio) => (
-                  <article className="audio-card" key={audio.title}>
-                    <div className="audio-top">
-                      <span>Faixa {audio.number}</span>
-                      <span className="audio-icon">♪</span>
-                    </div>
-                    <h4>{audio.title}</h4>
-                    <p>{audio.description}</p>
-                    <audio controls preload="none" aria-label={`Ouvir ${audio.title}`}>
-                      <source src={audio.src} type="audio/mpeg" />
-                    </audio>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className="sample-collection pharma-collection">
-              <div className="collection-heading">
-                <div>
-                  <span className="collection-index">Disciplina 02</span>
-                  <h3>Farmacologia e Administração de Medicamentos</h3>
-                </div>
-                <span className="collection-count">2 amostras disponíveis</span>
-              </div>
-              <div className="pharma-content">
-                <div className="pharma-audio-grid">
-                  <article className="pharma-audio-card">
-                    <span className="pharma-kicker">Revisão direcionada</span>
-                    <div className="pharma-track-title">
-                      <div>
-                        <small>Faixa 01</small>
-                        <h4>Classe Farmacológica</h4>
+          <div className="sample-player">
+            <div className="player-window-bar"><i /><i /><i /><span>Memória Musical · Player</span></div>
+            {sampleGroups.map((group, index) => (
+              <input key={group.id} type="radio" name="sample-tab" id={`sample-${group.id}`} defaultChecked={index === 0} />
+            ))}
+            <div className="sample-tabs" role="tablist" aria-label="Disciplinas disponíveis">
+              {sampleGroups.map((group) => <label key={group.id} htmlFor={`sample-${group.id}`}>{group.label}</label>)}
+            </div>
+            <div className="sample-panels">
+              {sampleGroups.map((group) => (
+                <div className={`sample-panel panel-${group.id}`} key={group.id}>
+                  {group.tracks.map((track) => (
+                    <article className="sample-track" key={track.title}>
+                      <div className="track-meta">
+                        <span className="track-play">▶</span>
+                        <div><strong>{track.title}</strong><small>{"genre" in track ? track.genre : track.description}</small></div>
                       </div>
-                      <span className="audio-icon">♪</span>
-                    </div>
-                    <p>Uma amostra musical para reforçar conceitos de Farmacologia durante a rotina.</p>
-                    <audio controls preload="none" aria-label="Ouvir Classe Farmacológica">
-                      <source src="/media/classe-farmacologica.mp3" type="audio/mpeg" />
-                    </audio>
-                  </article>
-                  <article className="pharma-audio-card">
-                    <span className="pharma-kicker">Revisão direcionada</span>
-                    <div className="pharma-track-title">
-                      <div>
-                        <small>Faixa 02</small>
-                        <h4>Mecanismo de Ação</h4>
-                      </div>
-                      <span className="audio-icon">♪</span>
-                    </div>
-                    <p>Reforce como os medicamentos produzem seus efeitos no organismo.</p>
-                    <audio controls preload="none" aria-label="Ouvir Mecanismo de Ação">
-                      <source src="/media/mecanismo-de-acao.mp3" type="audio/mpeg" />
-                    </audio>
-                  </article>
+                      <audio controls preload="none" aria-label={`Ouvir ${track.title}`}><source src={track.src} type="audio/mpeg" /></audio>
+                    </article>
+                  ))}
+                  <p className="player-footer">{group.footer} · faixas completas disponíveis na plataforma</p>
                 </div>
-                <ul>
-                  <li>Fundamentos de Farmacologia</li>
-                  <li>Vias de administração</li>
-                  <li>Cálculo e diluição de medicamentos</li>
-                  <li>Segurança na administração</li>
-                </ul>
-              </div>
-            </section>
-
-            <section className="sample-collection genre-collection">
-              <div className="collection-heading">
-                <div>
-                  <span className="collection-index">Outros estilos musicais</span>
-                  <h3>Sertanejo, MPB e pagode para revisar</h3>
-                </div>
-                <span className="collection-count">3 novas amostras</span>
-              </div>
-              <div className="audio-grid">
-                {genreSamples.map((audio) => (
-                  <article className="audio-card genre-audio-card" key={audio.title}>
-                    <div className="audio-top">
-                      <span>Faixa {audio.number}</span>
-                      <span className="genre-label">{audio.genre}</span>
-                    </div>
-                    <h4>{audio.title}</h4>
-                    <p>{audio.description}</p>
-                    <audio controls preload="none" aria-label={`Ouvir ${audio.title} em ritmo de ${audio.genre}`}>
-                      <source src={audio.src} type="audio/mpeg" />
-                    </audio>
-                  </article>
-                ))}
-              </div>
-            </section>
+              ))}
+            </div>
           </div>
         </div>
       </section>
