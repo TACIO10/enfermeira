@@ -65,15 +65,6 @@ const genreSamples = [
 
 const sampleGroups = [
   { id: "sus", label: "Saúde Pública e SUS", footer: "3 faixas disponíveis nesta trilha", tracks: audios },
-  {
-    id: "farmacologia",
-    label: "Farmacologia",
-    footer: "2 faixas disponíveis nesta trilha",
-    tracks: [
-      { number: "01", title: "Classe Farmacológica", description: "Fundamentos e classes de medicamentos.", src: "/media/classe-farmacologica.mp3" },
-      { number: "02", title: "Mecanismo de Ação", description: "Como os medicamentos produzem seus efeitos.", src: "/media/mecanismo-de-acao.mp3" },
-    ],
-  },
   { id: "estilos", label: "Outros estilos", footer: "Sertanejo, MPB e pagode", tracks: genreSamples },
 ];
 

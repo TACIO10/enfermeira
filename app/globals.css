@@ -135,12 +135,12 @@ h3 { font-size: 25px; }
 .player-window-bar i { width: 10px; height: 10px; border-radius: 50%; background: #c63748; }
 .player-window-bar i:nth-child(2) { background: #bd8e20; }
 .player-window-bar i:nth-child(3) { margin-right: 9px; background: #36a15f; }
-.sample-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid #242642; }
+.sample-tabs { display: grid; grid-template-columns: repeat(2, 1fr); border-bottom: 1px solid #242642; }
 .sample-tabs label { padding: 18px 10px; color: #8493bd; cursor: pointer; font-size: 13px; font-weight: 800; text-align: center; transition: color .2s, background .2s; }
 .sample-tabs label:hover { background: rgba(255,255,255,.025); color: white; }
 .sample-panel { display: none; }
-#sample-sus:checked ~ .sample-tabs label[for="sample-sus"], #sample-farmacologia:checked ~ .sample-tabs label[for="sample-farmacologia"], #sample-estilos:checked ~ .sample-tabs label[for="sample-estilos"] { border-bottom: 2px solid #24df79; color: #24df79; }
-#sample-sus:checked ~ .sample-panels .panel-sus, #sample-farmacologia:checked ~ .sample-panels .panel-farmacologia, #sample-estilos:checked ~ .sample-panels .panel-estilos { display: block; }
+#sample-sus:checked ~ .sample-tabs label[for="sample-sus"], #sample-estilos:checked ~ .sample-tabs label[for="sample-estilos"] { border-bottom: 2px solid #24df79; color: #24df79; }
+#sample-sus:checked ~ .sample-panels .panel-sus, #sample-estilos:checked ~ .sample-panels .panel-estilos { display: block; }
 .sample-track { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: center; min-height: 94px; padding: 16px 22px; border-bottom: 1px solid #22243e; }
 .track-meta { display: flex; align-items: center; gap: 16px; min-width: 0; }
 .track-meta div { min-width: 0; }
