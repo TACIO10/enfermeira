@@ -284,6 +284,12 @@ audio { touch-action: pan-y; }
 .final-cta { padding: 100px 0; background: var(--deep-2); color: white; text-align: center; }
 .final-cta h2 { max-width: 800px; margin-inline: auto; }
 .final-cta p { margin-bottom: 30px; color: #c1d3cf; font-size: 18px; }
+.whatsapp-support { padding: 76px 0; border-top: 1px solid #dce9e4; background: #f4fbf8; text-align: center; }
+.whatsapp-support-inner { display: flex; align-items: center; flex-direction: column; }
+.whatsapp-support h2 { margin: 12px 0; color: var(--deep); }
+.whatsapp-support p { max-width: 650px; margin: 0 0 28px; color: var(--ink-soft); font-size: 18px; }
+.whatsapp-button { background: #25d366; color: #062f22; box-shadow: 0 12px 28px rgba(37, 211, 102, .22); }
+.whatsapp-button:hover { background: #20bd5b; }
 footer { padding: 45px 0; background: #051f23; color: #aec2bd; }
 .footer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; align-items: center; }
 .footer-inner p { margin: 0; font-size: 11px; text-align: right; }
