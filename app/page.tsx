@@ -240,10 +240,9 @@ export default function Home() {
                   {group.tracks.map((track) => (
                     <article className="sample-track" key={track.title}>
                       <div className="track-meta">
-                        <span className="track-play">▶</span>
                         <div><strong>{track.title}</strong><small>{"genre" in track ? track.genre : track.description}</small></div>
                       </div>
-                      <audio controls preload="none" aria-label={`Ouvir ${track.title}`}><source src={track.src} type="audio/mpeg" /></audio>
+                      <audio controls controlsList="nodownload noplaybackrate" disablePictureInPicture preload="none" aria-label={`Ouvir ${track.title}`}><source src={track.src} type="audio/mpeg" /></audio>
                     </article>
                   ))}
                   <p className="player-footer">{group.footer} · faixas completas disponíveis na plataforma</p>

@@ -143,7 +143,6 @@ h3 { font-size: 25px; }
 #sample-sus:checked ~ .sample-panels .panel-sus, #sample-farmacologia:checked ~ .sample-panels .panel-farmacologia, #sample-estilos:checked ~ .sample-panels .panel-estilos { display: block; }
 .sample-track { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: center; min-height: 94px; padding: 16px 22px; border-bottom: 1px solid #22243e; }
 .track-meta { display: flex; align-items: center; gap: 16px; min-width: 0; }
-.track-play { display: grid; flex: 0 0 auto; place-items: center; width: 38px; height: 38px; padding-left: 2px; border-radius: 50%; background: #24264a; color: white; font-size: 12px; }
 .track-meta div { min-width: 0; }
 .track-meta strong, .track-meta small { display: block; }
 .track-meta strong { overflow: hidden; color: white; font-size: 15px; text-overflow: ellipsis; white-space: nowrap; }
