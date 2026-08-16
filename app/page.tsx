@@ -396,6 +396,7 @@ export default function Home() {
               <p className="cash-price light-copy">cobrança mensal recorrente</p>
               <ul>
                 <li>✓ Mais de 1.000 músicas</li>
+                <li>✓ Músicas baseadas nos editais de Enfermagem</li>
                 <li>✓ Biblioteca completa de músicas</li>
                 <li>✓ Playlists organizadas por disciplina</li>
                 <li>✓ Acesso pelo celular e computador</li>
@@ -487,7 +488,7 @@ export default function Home() {
               ],
               [
                 "6. As músicas são baseadas no edital?",
-                "Sim.\n\nOs conteúdos são produzidos com foco nos assuntos mais recorrentes dos concursos de Enfermagem, ajudando você a revisar temas que costumam aparecer nas provas.",
+                "Sim.\n\nAs músicas são desenvolvidas com base nos assuntos presentes nos editais de concursos de Enfermagem, com prioridade para os conteúdos mais recorrentes nas provas. Como cada concurso pode apresentar temas e exigências específicas, o Método da Memória Musical deve ser utilizado como complemento ao estudo direcionado pelo edital do concurso que você pretende prestar.",
               ],
               [
                 "7. Para quais concursos o método serve?",
