@@ -395,6 +395,7 @@ export default function Home() {
               <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small><span className="price-period">/mês</span></div>
               <p className="cash-price light-copy">cobrança mensal recorrente</p>
               <ul>
+                <li>✓ Mais de 1.000 músicas</li>
                 <li>✓ Biblioteca completa de músicas</li>
                 <li>✓ Playlists organizadas por disciplina</li>
                 <li>✓ Acesso pelo celular e computador</li>
