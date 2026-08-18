@@ -556,7 +556,7 @@ export default function Home() {
           <p>Chame nosso suporte no WhatsApp. Estamos disponíveis para ajudar você antes de começar.</p>
           <a
             className="button whatsapp-button"
-            href="https://wa.me/5511937260992?text=Ol%C3%A1%21%20Ainda%20tenho%20algumas%20d%C3%BAvidas%20sobre%20o%20M%C3%A9todo%20da%20Mem%C3%B3ria%20Musical."
+            href="https://wa.me/5516992344060?text=Ol%C3%A1%21%20Ainda%20tenho%20algumas%20d%C3%BAvidas%20sobre%20o%20M%C3%A9todo%20da%20Mem%C3%B3ria%20Musical."
             target="_blank"
             rel="noopener noreferrer"
           >
