@@ -48,7 +48,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              'window.addEventListener("load",function(){if(location.hash!=="#oferta")return;requestAnimationFrame(function(){var y=window.scrollY;history.replaceState(null,"",location.pathname+location.search);window.scrollTo(0,y);});});',
+              '(function(){function releaseAnchor(){if(location.hash!=="#oferta")return;setTimeout(function(){var y=window.scrollY;history.replaceState(null,"",location.pathname+location.search);window.scrollTo(0,y);},250);}window.addEventListener("load",releaseAnchor);window.addEventListener("pageshow",releaseAnchor);})();',
           }}
         />
         <script

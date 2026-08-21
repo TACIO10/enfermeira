@@ -122,7 +122,7 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="?ir=precos#oferta">
+              <a className="button primary" href="?ir=precos-v2#oferta">
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </a>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
