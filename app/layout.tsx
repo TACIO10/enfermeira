@@ -46,6 +46,12 @@ export default function RootLayout({
           async
         />
         <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.addEventListener("hashchange",function(){if(location.hash!=="#oferta")return;requestAnimationFrame(function(){history.replaceState(null,"",location.pathname+location.search);});});',
+          }}
+        />
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html:
