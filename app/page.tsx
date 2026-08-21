@@ -161,23 +161,6 @@ export default function Home() {
             aparece depois: encontrar tempo e energia para reencontrar a matéria
             vezes suficientes para ela permanecer acessível.
           </p>
-          <div className="memory-test">
-            <div>
-              <span className="test-label">Complete mentalmente:</span>
-              <blockquote>“Parabéns pra…”</blockquote>
-              <strong>Fácil, não é?</strong>
-            </div>
-            <div className="divider-arrow">→</div>
-            <div>
-              <span className="test-label">Agora tente lembrar:</span>
-              <blockquote>O 5º tópico do último PDF</blockquote>
-              <strong>Percebe a diferença?</strong>
-            </div>
-          </div>
-          <p className="insight">
-            O problema não é falta de capacidade. <strong>É a forma como a revisão
-            cabe — ou não cabe — na sua rotina.</strong>
-          </p>
         </div>
       </section>
 
