@@ -46,6 +46,12 @@ export default function RootLayout({
           async
         />
         <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'document.addEventListener("click",function(event){var link=event.target.closest("a[href=\"#oferta\"]");if(!link)return;setTimeout(function(){window.scrollBy(0,1);},50);},{passive:true});',
+          }}
+        />
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html:
