@@ -122,9 +122,9 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#oferta">
+              <button className="button primary" type="button" data-price-jump>
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
-              </a>
+              </button>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
             </div>
             <div className="hero-proof">

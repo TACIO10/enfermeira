@@ -48,7 +48,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              'window.addEventListener("hashchange",function(){if(location.hash!=="#oferta")return;requestAnimationFrame(function(){history.replaceState(null,"",location.pathname+location.search);});});',
+              'document.addEventListener("click",function(event){var button=event.target.closest("[data-price-jump]");if(!button)return;var target=document.getElementById("oferta");if(!target)return;target.scrollIntoView({behavior:"auto",block:"start"});});',
           }}
         />
         <script
