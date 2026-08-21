@@ -122,7 +122,7 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="?ir=precos-v2#oferta">
+              <a className="button primary" href="#oferta">
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </a>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
@@ -373,7 +373,7 @@ export default function Home() {
               ["depoimento-camila.webp", "Depoimento de Camila Santos"],
               ["depoimento-amanda.webp", "Depoimento de Amanda Ferreira"],
             ].map(([image, alt]) => (
-              <figure key={image}><img src={`/media/${image}`} alt={alt} loading="lazy" decoding="async" /></figure>
+              <figure key={image}><img src={`/media/${image}`} alt={alt} width="853" height="1844" loading="lazy" decoding="async" /></figure>
             ))}
           </div>
         </div>
