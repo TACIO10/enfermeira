@@ -122,8 +122,8 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <button className="button primary" type="button" data-scroll-target="experimente">
-                Ouvir uma amostra grátis <span>→</span>
+              <button className="button primary" type="button" data-scroll-target="oferta">
+                <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </button>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
             </div>
