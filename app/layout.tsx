@@ -46,12 +46,6 @@ export default function RootLayout({
           async
         />
         <script
-          dangerouslySetInnerHTML={{
-            __html:
-              'document.addEventListener("click",function(event){var trigger=event.target.closest("[data-scroll-target]");if(!trigger)return;event.preventDefault();var target=document.getElementById(trigger.getAttribute("data-scroll-target"));if(!target)return;window.scrollTo(0,target.getBoundingClientRect().top+window.scrollY);});',
-          }}
-        />
-        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html:
