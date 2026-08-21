@@ -15,7 +15,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: auto; }
+html { scroll-behavior: auto; overflow-anchor: none; }
+body, main { overflow-anchor: none; }
 body {
   margin: 0;
   background: var(--paper);
