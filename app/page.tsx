@@ -122,7 +122,7 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <button className="button primary" type="button" data-scroll-target="oferta">
+              <button className="button primary" type="button" data-scroll-target="precos">
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </button>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
@@ -272,7 +272,7 @@ export default function Home() {
 
       <section className="contents section" id="conteudos">
         <div className="wrap">
-          <div className="section-heading center">
+          <div className="section-heading center" id="precos">
             <span className="eyebrow">Dentro da plataforma</span>
             <h2>Os temas que mais aparecem nos editais, prontos para acompanhar você.</h2>
           </div>
