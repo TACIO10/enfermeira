@@ -383,7 +383,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-heading center">
             <span className="eyebrow">Escolha seu acesso</span>
-            <h2>Comece no seu ritmo ou leve a preparação completa.</h2>
+            <h2>Comece hoje a estudar com músicas.</h2>
             <p>Os dois planos têm acesso imediato e garantia de 30 dias.</p>
           </div>
 
