@@ -272,7 +272,7 @@ export default function Home() {
 
       <section className="contents section" id="conteudos">
         <div className="wrap">
-          <div className="section-heading center" id="precos">
+          <div className="section-heading center">
             <span className="eyebrow">Dentro da plataforma</span>
             <h2>Os temas que mais aparecem nos editais, prontos para acompanhar você.</h2>
           </div>
@@ -381,7 +381,7 @@ export default function Home() {
 
       <section className="pricing section" id="oferta">
         <div className="wrap">
-          <div className="section-heading center">
+          <div className="section-heading center" id="precos">
             <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
             <p>Os dois planos têm acesso imediato e garantia de 30 dias.</p>
