@@ -122,7 +122,7 @@ export default function Home() {
               seus plantões, deslocamentos e os poucos minutos livres do dia.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#precos">
+              <a className="button primary" href="#oferta">
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </a>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
@@ -381,7 +381,7 @@ export default function Home() {
 
       <section className="pricing section" id="oferta">
         <div className="wrap">
-          <div className="section-heading center" id="precos">
+          <div className="section-heading center">
             <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
             <p>Os dois planos têm acesso imediato e garantia de 30 dias.</p>
