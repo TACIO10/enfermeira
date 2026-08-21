@@ -46,6 +46,12 @@ export default function RootLayout({
           async
         />
         <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.addEventListener("load",function(){if(location.hash!=="#oferta")return;requestAnimationFrame(function(){var y=window.scrollY;history.replaceState(null,"",location.pathname+location.search);window.scrollTo(0,y);});});',
+          }}
+        />
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html:
