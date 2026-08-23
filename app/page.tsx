@@ -130,7 +130,7 @@ export default function Home() {
             <div className="hero-proof">
               <span>✓ Acesso imediato</span>
               <span>✓ Celular e computador</span>
-              <span>✓ Garantia de 30 dias</span>
+              <span>✓ Garantia de 7 dias</span>
             </div>
           </div>
 
@@ -367,7 +367,7 @@ export default function Home() {
           <div className="section-heading center">
             <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
-            <p>Os dois planos têm acesso imediato e garantia de 30 dias.</p>
+            <p>Os dois planos têm acesso imediato e garantia de 7 dias.</p>
           </div>
 
           <div className="price-grid">
@@ -422,18 +422,18 @@ export default function Home() {
               </a>
             </article>
           </div>
-          <p className="secure-note">🔒 Compra segura · Liberação imediata · Garantia de 30 dias</p>
+          <p className="secure-note">🔒 Compra segura · Liberação imediata · Garantia de 7 dias</p>
         </div>
       </section>
 
       <section className="guarantee section dark">
         <div className="wrap guarantee-grid">
-          <div className="guarantee-seal"><strong>30</strong><span>DIAS</span></div>
+          <div className="guarantee-seal"><strong>7</strong><span>DIAS</span></div>
           <div>
             <span className="eyebrow light">Risco reduzido</span>
             <h2>Ouça, explore e veja se o método cabe na sua rotina.</h2>
             <p>
-              Você tem 30 dias para experimentar. Se perceber que o Método da
+              Você tem 7 dias para experimentar. Se perceber que o Método da
               Memória Musical não faz sentido para você, basta solicitar o reembolso.
             </p>
             <strong>O risco fica do nosso lado.</strong>
