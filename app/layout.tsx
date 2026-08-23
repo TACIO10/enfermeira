@@ -42,7 +42,7 @@ export default function RootLayout({
           async
         />
         <script
-          src="https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6a7f903d9b544b5366ba4beb/v4/player.js"
+          src="https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6a8b16bc2d15b4a5d950c866/v4/player.js"
           async
         />
         <script
