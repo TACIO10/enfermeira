@@ -34,6 +34,15 @@ export default function RootLayout({
           data-event-host="api.raadstag.com"
           data-plat-params="src,sck,utm_medium,utm_content,utm_term"
         />
+        <script dangerouslySetInnerHTML={{ __html: 'window.pixelId="6a668772849ca51086a296f7";' }} />
+        <script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer />
+        <script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck=""
+          data-utmify-prevent-subids=""
+          async
+          defer
+        />
         <script
           data-goatcounter="https://enfermeiro.goatcounter.com/count"
           src="https://gc.zgo.at/count.js"
