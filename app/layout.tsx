@@ -28,6 +28,13 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <script
+          defer
+          src="https://cdn.raadstag.com/tag.js"
+          data-tag-id="12333-91460ed26f1e492ab67bddf8ae1a6acf"
+          data-event-host="api.raadstag.com"
+          data-plat-params="src,sck,utm_medium,utm_content,utm_term"
+        />
+        <script
           data-goatcounter="https://enfermeiro.goatcounter.com/count"
           src="https://gc.zgo.at/count.js"
           async
