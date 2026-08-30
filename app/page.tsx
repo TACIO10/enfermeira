@@ -367,7 +367,7 @@ export default function Home() {
           <div className="section-heading center">
             <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
-            <p>Os dois planos têm acesso imediato e garantia de 7 dias.</p>
+            <p>Seu desconto de 60% foi aplicado com sucesso.</p>
           </div>
 
           <div className="price-grid">
