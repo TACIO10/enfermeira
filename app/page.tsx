@@ -375,8 +375,14 @@ export default function Home() {
               <span className="price-ribbon essential-ribbon">Para começar</span>
               <span className="plan-tag">Plano Essencial</span>
               <h3>Acesso ao Método da Memória Musical</h3>
+              <div className="price-comparison">
+                <span>Preço normal</span>
+                <del>R$ 167,50 por mês</del>
+                <strong>60% de desconto</strong>
+              </div>
               <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small><span className="price-period">/mês</span></div>
-              <p className="cash-price light-copy">cobrança mensal recorrente</p>
+              <p className="cash-price light-copy">Você paga R$ 67 por mês</p>
+              <p className="billing-note">Cobrança mensal recorrente</p>
               <ul>
                 <li>✓ Mais de 1.000 músicas</li>
                 <li>✓ Músicas baseadas nos editais de Enfermagem</li>
@@ -400,9 +406,14 @@ export default function Home() {
               <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="annual-price"><small>R$</small><strong>19,99</strong><span>/mês</span></div>
-              <p className="annual-payment">12x de R$ 19,99 no cartão · ou R$ 197 à vista</p>
-              <span className="value-badge">70% mais barato que o mensal</span>
+              <div className="price-comparison">
+                <span>Preço normal</span>
+                <del>R$ 492,50 por ano</del>
+                <strong>60% de desconto</strong>
+              </div>
+              <div className="annual-price"><small>R$</small><strong>197</strong><small>,00</small><span>/ano</span></div>
+              <p className="annual-payment">Você paga R$ 197 no plano anual</p>
+              <span className="value-badge">Equivale a R$ 16,42 por mês</span>
               <ul>
                 <li>✓ Tudo do Plano Essencial</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>

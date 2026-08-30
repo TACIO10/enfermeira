@@ -251,6 +251,10 @@ h3 { font-size: 25px; }
 .plan-tag { color: var(--mint-dark); font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .price-card .plan-tag { color: var(--lime); }
 .price-card h3 { max-width: 330px; min-height: 58px; margin: 18px 0 28px; font-size: 27px; }
+.price-comparison { display: grid; justify-items: center; gap: 6px; margin: -5px 0 24px; text-align: center; }
+.price-comparison span { color: #9fb8b2; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.price-comparison del { color: #d7e2df; font-size: 18px; font-weight: 800; text-decoration-color: #ff776f; text-decoration-thickness: 2px; }
+.price-comparison strong { display: inline-flex; padding: 7px 13px; border-radius: 999px; background: var(--mint); color: var(--deep); font-size: 12px; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
 .single-price { display: flex; justify-content: center; align-items: flex-start; color: var(--mint); }
 .single-price strong { font-size: 74px; line-height: .85; letter-spacing: -.07em; }
 .single-price small { font-size: 19px; font-weight: 900; }
@@ -269,6 +273,7 @@ h3 { font-size: 25px; }
 .installment-price strong:first-child { color: var(--mint); font-size: 34px; }
 .installment-price strong:last-child { font-size: 48px; letter-spacing: -.04em; }
 .cash-price { margin: 12px 0 0; color: #c9d9d5; font-size: 17px; font-weight: 800; text-align: center; }
+.billing-note { margin: 5px 0 0; color: #8ea8a2; font-size: 12px; text-align: center; }
 .light-copy { color: #b8cbc6; }
 .value-badge { align-self: center; margin-top: 18px; padding: 7px 13px; border: 1px solid rgba(67,214,160,.45); border-radius: 999px; background: rgba(67,214,160,.1); color: var(--mint); font-size: 11px; font-weight: 900; }
 .installments { margin: 5px 0 0; color: var(--lime); font-size: 16px; font-weight: 900; text-align: center; }
