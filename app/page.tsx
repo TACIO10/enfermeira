@@ -365,7 +365,10 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <span className="eyebrow">Escolha seu acesso</span>
+            <div className="discount-unlocked">
+              <strong>Seu desconto foi aplicado!</strong>
+              <span>Você desbloqueou a condição especial</span>
+            </div>
             <h2>Comece hoje a estudar com músicas.</h2>
             <p>Os dois planos têm acesso imediato e garantia de 7 dias.</p>
           </div>
