@@ -365,10 +365,7 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <div className="discount-unlocked">
-              <strong>Seu desconto foi aplicado!</strong>
-              <span>Você desbloqueou a condição especial</span>
-            </div>
+            <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
             <p>Os dois planos têm acesso imediato e garantia de 7 dias.</p>
           </div>
@@ -378,14 +375,8 @@ export default function Home() {
               <span className="price-ribbon essential-ribbon">Para começar</span>
               <span className="plan-tag">Plano Essencial</span>
               <h3>Acesso ao Método da Memória Musical</h3>
-              <div className="price-comparison">
-                <span>Preço normal</span>
-                <del>R$ 167,50 por mês</del>
-                <strong>60% de desconto</strong>
-              </div>
               <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small><span className="price-period">/mês</span></div>
-              <p className="cash-price light-copy">Você paga R$ 67 por mês</p>
-              <p className="billing-note">Cobrança mensal recorrente</p>
+              <p className="cash-price light-copy">cobrança mensal recorrente</p>
               <ul>
                 <li>✓ Mais de 1.000 músicas</li>
                 <li>✓ Músicas baseadas nos editais de Enfermagem</li>
@@ -409,13 +400,9 @@ export default function Home() {
               <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="price-comparison">
-                <span>Preço normal</span>
-                <del>R$ 492,50 por ano</del>
-                <strong>60% de desconto</strong>
-              </div>
               <div className="annual-price"><small>R$</small><strong>19,99</strong><span>/mês</span></div>
               <p className="annual-payment">12x de R$ 19,99 no cartão · ou R$ 197 à vista</p>
+              <span className="value-badge">70% mais barato que o mensal</span>
               <ul>
                 <li>✓ Tudo do Plano Essencial</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>

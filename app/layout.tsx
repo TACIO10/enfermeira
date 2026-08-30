@@ -40,12 +40,6 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              '(function(){var seen=new WeakSet();function replace(root){if(!root)return;var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);var node;while(node=walker.nextNode()){var value=node.nodeValue||"";if(value.indexOf("80%")!==-1&&value.toUpperCase().indexOf("DESCONTO")!==-1&&value.toUpperCase().indexOf("APLICADO")!==-1){node.nodeValue=value.replace(/80%/g,"60%");}}if(root.querySelectorAll){root.querySelectorAll("*").forEach(function(el){if(el.shadowRoot){watch(el.shadowRoot);replace(el.shadowRoot);}});}}function watch(root){if(!root||seen.has(root))return;seen.add(root);new MutationObserver(function(mutations){mutations.forEach(function(mutation){if(mutation.type==="characterData"){replace(mutation.target.parentNode);}else{mutation.addedNodes.forEach(function(node){if(node.nodeType===1||node.nodeType===11){replace(node);}});}});}).observe(root,{childList:true,subtree:true,characterData:true});}function start(){watch(document.documentElement);replace(document.documentElement);}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",start);}else{start();}})();',
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
               'document.addEventListener("click",function(event){var button=event.target.closest("[data-price-jump]");if(!button)return;var target=document.getElementById("oferta");if(!target)return;target.scrollIntoView({behavior:"auto",block:"start"});});',
           }}
         />
