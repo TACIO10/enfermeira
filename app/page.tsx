@@ -411,9 +411,8 @@ export default function Home() {
                 <del>R$ 492,50 por ano</del>
                 <strong>60% de desconto</strong>
               </div>
-              <div className="annual-price"><small>R$</small><strong>197</strong><small>,00</small><span>/ano</span></div>
-              <p className="annual-payment">Você paga R$ 197 no plano anual</p>
-              <span className="value-badge">Equivale a R$ 16,42 por mês</span>
+              <div className="annual-price"><small>R$</small><strong>19,99</strong><span>/mês</span></div>
+              <p className="annual-payment">12x de R$ 19,99 no cartão · ou R$ 197 à vista</p>
               <ul>
                 <li>✓ Tudo do Plano Essencial</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>
