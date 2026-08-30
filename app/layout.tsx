@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import globalStyles from "./globals.css?inline";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://memoria-musical-enfermagem.taciojoga10.chatgpt.site"),
@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
         <script
           data-goatcounter="https://enfermeiro.goatcounter.com/count"
           src="https://gc.zgo.at/count.js"
