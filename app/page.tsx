@@ -1,7 +1,7 @@
 const essentialCheckout =
-  "https://lastlink.com/p/C9E42D93C/checkout-payment/?utm_source=organic";
+  "https://lastlink.com/p/C9E42D93C/checkout-payment/";
 const completeCheckout =
-  "https://lastlink.com/p/C2D975DAB/checkout-payment/?utm_source=organic";
+  "https://lastlink.com/p/C2D975DAB/checkout-payment/";
 
 const subjects = [
   { icon: "🩺", title: "Sistema Único de Saúde (SUS)", text: "Memorize os principais conceitos do SUS através de músicas criadas com base nos conteúdos mais cobrados em concursos.", topics: ["Princípios e Diretrizes", "Leis 8.080 e 8.142", "Organização do SUS", "Redes de Atenção à Saúde", "Participação Social"] },
