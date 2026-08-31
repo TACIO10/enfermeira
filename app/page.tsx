@@ -523,15 +523,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta">
-        <div className="wrap narrow">
-          <span className="eyebrow light">Sua próxima revisão pode começar agora</span>
-          <h2>Deixe a matéria acompanhar você — e não o contrário.</h2>
-          <p>Escolha o plano que combina com sua preparação e receba o acesso imediatamente.</p>
-          <a className="button primary" href="#oferta">Quero começar agora <span>↑</span></a>
-        </div>
-      </section>
-
       <section className="whatsapp-support" aria-labelledby="whatsapp-support-title">
         <div className="wrap narrow whatsapp-support-inner">
           <span className="eyebrow">Atendimento</span>
