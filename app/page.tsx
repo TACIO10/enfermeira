@@ -279,9 +279,6 @@ export default function Home() {
               </details>
             ))}
           </div>
-          <div className="center-cta">
-            <a className="button dark-button" href="#oferta">Quero escolher meu acesso <span>↓</span></a>
-          </div>
         </div>
       </section>
 
