@@ -104,11 +104,7 @@ export default function Home() {
         <div className="hero-grid wrap">
           <div className="hero-copy">
             <span className="eyebrow light">Para concursos de enfermagem</span>
-            <h1>
-              Aprenda a memorizar os assuntos mais cobrados dos concursos de
-              Enfermagem em apenas <em>20 minutos por dia</em>, sem depender apenas
-              de PDFs e videoaulas.
-            </h1>
+            <h1>Memorize Enfermagem com +1.000 músicas atualizadas para Concursos e Residências em 2026.</h1>
             <div
               className="hero-video"
               aria-label="Vídeo de apresentação do Método da Memória Musical"
