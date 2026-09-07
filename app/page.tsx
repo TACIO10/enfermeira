@@ -455,59 +455,63 @@ export default function Home() {
                 "Não.\n\nEle foi desenvolvido para complementar sua preparação. Você continua estudando pelos materiais tradicionais e utiliza as músicas para reforçar e revisar os conteúdos de forma prática durante a rotina.",
               ],
               [
-                "3. Como estudar ouvindo música pode ajudar?",
+                "3. Tem músicas específicas para o concurso da EBSERH?",
+                "Sim! O Memória Musical possui músicas voltadas para conteúdos cobrados nos concursos da EBSERH.",
+              ],
+              [
+                "4. Como estudar ouvindo música pode ajudar?",
                 "As músicas permitem que você mantenha contato frequente com os conteúdos já estudados, aproveitando momentos em que normalmente não estaria revisando, como no carro, caminhando, fazendo tarefas de casa ou nos intervalos do trabalho.",
               ],
               [
-                "4. Funciona mesmo para quem trabalha em plantão?",
+                "5. Funciona mesmo para quem trabalha em plantão?",
                 "Sim.\n\nO método foi pensado justamente para quem tem pouco tempo disponível. Como as músicas podem ser ouvidas em diferentes momentos do dia, fica mais fácil incluir revisões na rotina sem precisar passar horas extras sentado estudando.",
               ],
               [
-                "5. Nunca consegui decorar nada com música. Mesmo assim vale a pena?",
+                "6. Nunca consegui decorar nada com música. Mesmo assim vale a pena?",
                 "Sim.\n\nVocê não precisa cantar nem ter facilidade musical. As músicas funcionam como uma ferramenta complementar de revisão. Muitas pessoas percebem que a combinação entre ritmo e repetição torna o contato com o conteúdo mais frequente e agradável.",
               ],
               [
-                "6. As músicas são baseadas no edital?",
+                "7. As músicas são baseadas no edital?",
                 "Sim.\n\nAs músicas são desenvolvidas com base nos assuntos presentes nos editais de concursos de Enfermagem, com prioridade para os conteúdos mais recorrentes nas provas. Como cada concurso pode apresentar temas e exigências específicas, o Método da Memória Musical deve ser utilizado como complemento ao estudo direcionado pelo edital do concurso que você pretende prestar.",
               ],
               [
-                "7. Para quais concursos o método serve?",
+                "8. Para quais concursos o método serve?",
                 "O Método da Memória Musical® foi desenvolvido para concursos da área da Enfermagem. Como cada edital possui suas particularidades, ele deve ser utilizado como complemento à preparação específica para o concurso que você pretende prestar.",
               ],
               [
-                "8. Sou iniciante. Esse método é para mim?",
+                "9. Sou iniciante. Esse método é para mim?",
                 "Sim.\n\nSe você está começando agora, as músicas ajudam a reforçar o conteúdo desde o início dos estudos. E, se já estuda há algum tempo, elas podem complementar sua rotina de revisões.",
               ],
               [
-                "9. Tenho pouco tempo para estudar. Ainda vale a pena?",
+                "10. Tenho pouco tempo para estudar. Ainda vale a pena?",
                 "Sim.\n\nUma das maiores vantagens do método é justamente permitir que você aproveite momentos do dia que normalmente seriam improdutivos para reforçar os conteúdos já estudados.",
               ],
               [
-                "10. Posso acessar pelo celular?",
+                "11. Posso acessar pelo celular?",
                 "Sim.\n\nVocê poderá acessar a plataforma pelo celular, tablet ou computador, estudando de onde estiver.",
               ],
               [
-                "11. O acesso é imediato?",
+                "12. O acesso é imediato?",
                 "Sim.\n\nApós a confirmação do pagamento, seu acesso é liberado e você já pode começar a utilizar a plataforma.",
               ],
               [
-                "12. Vou receber atualizações?",
+                "13. Vou receber atualizações?",
                 "Sempre que novos conteúdos forem adicionados dentro do período de acesso do seu plano, eles ficarão disponíveis na plataforma conforme as condições da oferta.",
               ],
               [
-                "13. E se eu não gostar?",
+                "14. E se eu não gostar?",
                 "Você conta com uma garantia de 7 dias.\n\nAssim, poderá conhecer a plataforma e decidir com tranquilidade se o Método da Memória Musical® faz sentido para a sua preparação.",
               ],
               [
-                "14. Preciso estudar todos os dias ouvindo música?",
+                "15. Preciso estudar todos os dias ouvindo música?",
                 "Não.\n\nAs músicas são uma ferramenta para complementar suas revisões. Você pode utilizá-las nos momentos que fizerem sentido para a sua rotina de estudos.",
               ],
               [
-                "15. Em quanto tempo vou perceber resultados?",
+                "16. Em quanto tempo vou perceber resultados?",
                 "Cada pessoa possui uma rotina e um ritmo de aprendizado diferentes.\n\nO Método da Memória Musical® foi criado para facilitar suas revisões e complementar sua preparação, mas o desempenho em concursos depende de diversos fatores, como constância, planejamento e dedicação aos estudos.",
               ],
               [
-                "16. Como começo depois da compra?",
+                "17. Como começo depois da compra?",
                 "É simples.\n\n1. Finalize sua compra.\n2. Receba o acesso imediatamente.\n3. Entre na plataforma.\n4. Escolha a playlist do assunto que deseja revisar.\n5. Comece a estudar utilizando o Método da Memória Musical®.",
               ],
             ].map(([question, answer]) => (
