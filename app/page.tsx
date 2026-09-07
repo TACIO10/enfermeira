@@ -4,6 +4,7 @@ const completeCheckout =
   "https://lastlink.com/p/C2D975DAB/checkout-payment/";
 
 const subjects = [
+  { icon: "🏥", title: "Concurso EBSERH", text: "Reforce por meio de músicas os conteúdos mais cobrados nos concursos da EBSERH.", topics: ["SUS", "Legislação em Enfermagem", "Segurança do Paciente", "Urgência e Emergência", "Conhecimentos específicos de Enfermagem"] },
   { icon: "🩺", title: "Sistema Único de Saúde (SUS)", text: "Memorize os principais conceitos do SUS através de músicas criadas com base nos conteúdos mais cobrados em concursos.", topics: ["Princípios e Diretrizes", "Leis 8.080 e 8.142", "Organização do SUS", "Redes de Atenção à Saúde", "Participação Social"] },
   { icon: "⚖️", title: "Ética em Enfermagem", text: "Revise os principais conteúdos de Ética e Legislação de forma simples e repetitiva.", topics: ["Código de Ética", "Direitos e deveres", "Responsabilidade profissional", "Infrações éticas", "Exercício da profissão"] },
   { icon: "🌎", title: "Saúde Coletiva", text: "Aprenda os conceitos fundamentais cobrados nas provas de Saúde Coletiva.", topics: ["Promoção da Saúde", "Vigilância em Saúde", "Epidemiologia", "Atenção Primária", "Políticas Públicas"] },
