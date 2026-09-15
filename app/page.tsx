@@ -1,7 +1,7 @@
 const essentialCheckout =
-  "https://lastlink.com/p/C9E42D93C/checkout-payment/";
+  "https://checkout.payt.com.br/00866f9e635b46efd70d93bf8af772fa";
 const completeCheckout =
-  "https://lastlink.com/p/C2D975DAB/checkout-payment/";
+  "https://checkout.payt.com.br/b6a1d5de6e0101f3886464727fc6fb22";
 
 const subjects = [
   { icon: "🏥", title: "Concurso EBSERH", text: "Reforce por meio de músicas os conteúdos mais cobrados nos concursos da EBSERH.", topics: ["SUS", "Legislação em Enfermagem", "Segurança do Paciente", "Urgência e Emergência", "Conhecimentos específicos de Enfermagem"] },
