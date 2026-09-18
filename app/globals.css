@@ -229,9 +229,31 @@ h3 { font-size: 25px; }
 .bonus-copy p { color: var(--ink-soft); font-size: 14px; }
 .bonus-copy > strong { font-size: 12px; }
 
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.testimonial-grid figure { margin: 0; padding: 14px; border: 1px solid #cee0d9; border-radius: 10px; background: white; }
-.testimonial-grid img { width: 100%; }
+.testimonial-carousel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.testimonial-carousel:active { cursor: grabbing; }
+.testimonial-carousel::-webkit-scrollbar { display: none; }
+.testimonial-track { display: flex; gap: 20px; width: max-content; }
+.testimonial-track figure {
+  flex: 0 0 calc(min(1160px, 100vw - 80px) / 3 - 13.3333px);
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #cee0d9;
+  border-radius: 10px;
+  background: white;
+  scroll-snap-align: start;
+}
+.testimonial-track img { display: block; width: 100%; pointer-events: none; }
 
 .pricing { background: var(--cream); }
 .package-value { max-width: 720px; margin: 0 auto 38px; padding: 30px; border: 1px solid #c7ddd5; border-radius: 16px; background: white; box-shadow: 0 18px 45px rgba(12,54,48,.08); }
@@ -318,7 +340,7 @@ footer { padding: 45px 0; background: #051f23; color: #aec2bd; }
   .mechanism-copy { padding-top: 0; }
   .routine-strip { grid-column: 1; }
   .split-heading { grid-template-columns: 1fr; gap: 20px; }
-  .audio-grid, .bonus-grid, .testimonial-grid, .subject-grid { grid-template-columns: repeat(2, 1fr); }
+  .audio-grid, .bonus-grid, .subject-grid { grid-template-columns: repeat(2, 1fr); }
   .pharma-content { grid-template-columns: 1fr; gap: 30px; }
   .fit-visual { max-width: 520px; margin-inline: auto; }
 }
@@ -336,7 +358,9 @@ footer { padding: 45px 0; background: #051f23; color: #aec2bd; }
   .hero-proof { display: grid; gap: 7px; }
   .hero-visual { max-width: 410px; }
   .floating-card { left: 0; }
-  .routine-strip, .audio-grid, .bonus-grid, .testimonial-grid, .subject-grid, .compare-grid, .price-grid { grid-template-columns: 1fr; }
+  .routine-strip, .audio-grid, .bonus-grid, .subject-grid, .compare-grid, .price-grid { grid-template-columns: 1fr; }
+  .testimonial-track { gap: 14px; }
+  .testimonial-track figure { flex-basis: calc(88vw - 40px); }
   .sample-collection { padding: 24px 18px; border-radius: 15px; }
   .listen-heading h2 { font-size: 32px; }
   .sample-tabs label { display: flex; align-items: center; justify-content: center; min-height: 64px; padding: 12px 6px; font-size: 11px; }

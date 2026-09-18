@@ -1,15 +1,24 @@
 import type { Metadata } from "next";
 import globalStyles from "./globals.css?inline";
 
+// Vazio no build padrao; "/enfermeira" no build do GitHub Pages. O og:image
+// precisa do prefixo aqui: caminho iniciado por "/" e resolvido contra a raiz
+// do dominio, entao sem ele a imagem sai fora do subcaminho do Pages.
+const asset = process.env.PAGES_BASE_PATH ?? "";
+const ogImage = `${asset}/og.png`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://memoria-musical-enfermagem.taciojoga10.chatgpt.site"),
+  metadataBase: new URL(
+    process.env.PAGES_SITE_URL ??
+      "https://memoria-musical-enfermagem.taciojoga10.chatgpt.site",
+  ),
   title: "Memória Musical | Revisão para Concursos de Enfermagem",
   description:
     "Reforce os assuntos mais cobrados nos concursos de enfermagem com músicas que acompanham sua rotina.",
   openGraph: {
     title: "Memória Musical | Concursos de Enfermagem",
     description: "Faça a matéria voltar à memória.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage, width: 1200, height: 630 }],
     locale: "pt_BR",
     type: "website",
   },
@@ -17,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Memória Musical | Concursos de Enfermagem",
     description: "Faça a matéria voltar à memória.",
-    images: ["/og.png"],
+    images: [ogImage],
   },
 };
 
