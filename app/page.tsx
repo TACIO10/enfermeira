@@ -1,7 +1,9 @@
+import { TestimonialsCarousel } from "./testimonials-carousel";
+
 const essentialCheckout =
   "https://checkout.payt.com.br/00866f9e635b46efd70d93bf8af772fa";
 const completeCheckout =
-  "https://checkout.payt.com.br/b6a1d5de6e0101f3886464727fc6fb22";
+  "https://checkout.payt.com.br/b6a1d5de6e0101f3886464727fc6fb22?split=12";
 
 const subjects = [
   { icon: "🏥", title: "Concurso EBSERH", text: "Reforce por meio de músicas os conteúdos mais cobrados nos concursos da EBSERH.", topics: ["SUS", "Legislação em Enfermagem", "Segurança do Paciente", "Urgência e Emergência", "Conhecimentos específicos de Enfermagem"] },
@@ -16,7 +18,7 @@ const subjects = [
   { icon: "📋", title: "Processo de Enfermagem", text: "Memorize todas as etapas do Processo de Enfermagem.", topics: ["SAE", "Diagnósticos", "Planejamento", "Implementação", "Avaliação"] },
   { icon: "💉", title: "Administração de Medicamentos", text: "Revise os principais conceitos para evitar erros e acertar questões.", topics: ["Vias de administração", "Cálculo de medicamentos", "Diluições", "Segurança do paciente", "Administração segura"] },
   { icon: "📜", title: "Legislação em Enfermagem", text: "Memorize as principais leis e normas da profissão.", topics: ["Lei do Exercício Profissional", "COFEN", "COREN", "Responsabilidades legais", "Direitos do profissional"] },
-  { icon: "🎧", title: "Outros temas dos principais editais", status: "Playlist em constante atualização", text: "Além dos temas principais, você terá acesso a novas playlists adicionadas conforme os editais forem sendo publicados.", topics: ["Saúde do Idoso", "Saúde Mental", "Centro Cirúrgico", "CME", "Hemoterapia", "Oncologia", "Outros conteúdos recorrentes dos concursos"] },
+  { icon: "🎧", title: "Conhecimentos Complementares", status: "Playlist em constante atualização", text: "Além dos temas principais, você terá acesso a novas playlists adicionadas conforme os editais forem sendo publicados.", topics: ["Saúde do Adulto e do Idoso", "Clínica Médica e Cirúrgica", "Saúde Mental", "Centro Cirúrgico e CME", "Segurança do Paciente", "Controle de Infecções e CCIH", "Gestão e Gerenciamento em Enfermagem", "Nutrição, dietoterapia e sondagens", "Feridas, curativos e lesões por pressão", "Procedimentos e técnicas de Enfermagem", "Português e conhecimentos básicos"] },
 ];
 
 const audios = [
@@ -67,6 +69,12 @@ const genreSamples = [
 const sampleGroups = [
   { id: "sus", label: "Saúde Pública e SUS", footer: "3 faixas disponíveis nesta trilha", tracks: audios },
   { id: "estilos", label: "Outros estilos", footer: "Sertanejo, MPB e pagode", tracks: genreSamples },
+];
+
+const testimonials = [
+  { image: "/media/depoimento-juliana.webp", alt: "Depoimento de Juliana Rocha" },
+  { image: "/media/depoimento-camila.webp", alt: "Depoimento de Camila Santos" },
+  { image: "/media/depoimento-amanda.webp", alt: "Depoimento de Amanda Ferreira" },
 ];
 
 const bonuses = [
@@ -348,15 +356,7 @@ export default function Home() {
             <span className="eyebrow">Experiência de alunas</span>
             <h2>Veja os relatos de quem incluiu as músicas na rotina.</h2>
           </div>
-          <div className="testimonial-grid">
-            {[
-              ["depoimento-juliana.webp", "Depoimento de Juliana Rocha"],
-              ["depoimento-camila.webp", "Depoimento de Camila Santos"],
-              ["depoimento-amanda.webp", "Depoimento de Amanda Ferreira"],
-            ].map(([image, alt]) => (
-              <figure key={image}><img src={`/media/${image}`} alt={alt} width="853" height="1844" loading="lazy" decoding="async" /></figure>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 
@@ -398,8 +398,8 @@ export default function Home() {
               <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="annual-price"><small>R$</small><strong>19,99</strong><span>/mês</span></div>
-              <p className="annual-payment">12x de R$ 19,99 no cartão · ou R$ 197 à vista</p>
+              <div className="annual-price"><small>R$</small><strong>20,37</strong><span>/mês</span></div>
+              <p className="annual-payment">12x de R$ 20,37 no cartão · ou R$ 197 à vista</p>
               <span className="value-badge">70% mais barato que o mensal</span>
               <ul>
                 <li>✓ Tudo do Plano Essencial</li>
