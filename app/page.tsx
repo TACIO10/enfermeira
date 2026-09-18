@@ -1,5 +1,8 @@
 import { TestimonialsCarousel } from "./testimonials-carousel";
 
+// Vazio no build padrao; "/enfermeira" no build do GitHub Pages.
+const asset = process.env.PAGES_BASE_PATH ?? "";
+
 const essentialCheckout =
   "https://checkout.payt.com.br/00866f9e635b46efd70d93bf8af772fa";
 const completeCheckout =
@@ -26,19 +29,19 @@ const audios = [
     number: "01",
     title: "Atenção Primária",
     description: "Fundamentos da Atenção Primária transformados em revisão musical.",
-    src: "/media/atencao-primaria.mp3",
+    src: `${asset}/media/atencao-primaria.mp3`,
   },
   {
     number: "02",
     title: "Os Três Pilares da Saúde",
     description: "Conceitos essenciais reforçados de uma forma mais leve.",
-    src: "/media/tres-pilares-saude.mp3",
+    src: `${asset}/media/tres-pilares-saude.mp3`,
   },
   {
     number: "03",
     title: "SUS em Ação",
     description: "Uma amostra musical sobre o Sistema Único de Saúde.",
-    src: "/media/sus-em-acao.mp3",
+    src: `${asset}/media/sus-em-acao.mp3`,
   },
 ];
 
@@ -48,21 +51,21 @@ const genreSamples = [
     genre: "Sertanejo",
     title: "Pressão Alta, Atenção",
     description: "Uma revisão musical sobre hipertensão em ritmo sertanejo.",
-    src: "/media/pressao-alta-atencao.mp3",
+    src: `${asset}/media/pressao-alta-atencao.mp3`,
   },
   {
     number: "02",
     genre: "MPB",
     title: "Pressão na Medida Certa",
     description: "Conceitos importantes sobre pressão arterial em uma faixa de MPB.",
-    src: "/media/pressao-medida-certa.mp3",
+    src: `${asset}/media/pressao-medida-certa.mp3`,
   },
   {
     number: "03",
     genre: "Pagode",
     title: "Números do Diabetes",
     description: "Valores e conceitos sobre diabetes apresentados em ritmo de pagode.",
-    src: "/media/numeros-diabetes.mp3",
+    src: `${asset}/media/numeros-diabetes.mp3`,
   },
 ];
 
@@ -72,9 +75,12 @@ const sampleGroups = [
 ];
 
 const testimonials = [
-  { image: "/media/depoimento-juliana.webp", alt: "Depoimento de Juliana Rocha" },
-  { image: "/media/depoimento-camila.webp", alt: "Depoimento de Camila Santos" },
-  { image: "/media/depoimento-amanda.webp", alt: "Depoimento de Amanda Ferreira" },
+  { image: `${asset}/media/depoimento-juliana.webp`, alt: "Depoimento de Juliana Rocha" },
+  { image: `${asset}/media/depoimento-camila.webp`, alt: "Depoimento de Camila Santos" },
+  { image: `${asset}/media/depoimento-amanda.webp`, alt: "Depoimento de Amanda Ferreira" },
+  { image: `${asset}/media/depoimento-plano-anual.webp`, alt: "Depoimento de aluna que assinou o plano mensal e quis migrar para o anual" },
+  { image: `${asset}/media/depoimento-lu-miranda.webp`, alt: "Depoimento de Lu Miranda, que divulgou o método no hospital" },
+  { image: `${asset}/media/depoimento-edna.webp`, alt: "Depoimento de Edna Silva sobre a trilha sonora do aprendizado" },
 ];
 
 const bonuses = [
@@ -82,19 +88,19 @@ const bonuses = [
     number: "01",
     title: "Checklist dos assuntos mais cobrados",
     text: "Saiba o que priorizar e acompanhe sua evolução pelos temas com maior incidência.",
-    image: "/media/bonus-checklist.webp",
+    image: `${asset}/media/bonus-checklist.webp`,
   },
   {
     number: "02",
     title: "Banco de questões comentadas",
     text: "Pratique após cada revisão com questões organizadas por disciplina.",
-    image: "/media/bonus-questoes.webp",
+    image: `${asset}/media/bonus-questoes.webp`,
   },
   {
     number: "03",
     title: "Comunidade exclusiva de alunos",
     text: "Troque experiências, tire dúvidas e acompanhe as novidades do método.",
-    image: "/media/bonus-comunidade.webp",
+    image: `${asset}/media/bonus-comunidade.webp`,
   },
 ];
 
@@ -147,7 +153,7 @@ export default function Home() {
             <div className="visual-orbit orbit-one" />
             <div className="visual-orbit orbit-two" />
             <img
-              src="/media/oferta-memoria-musical.webp"
+              src={`${asset}/media/oferta-memoria-musical.webp`}
               alt="Método da Memória Musical no celular com comunidade, questões e checklist"
             />
             <div className="floating-card">
@@ -239,7 +245,7 @@ export default function Home() {
       <section className="fit section">
         <div className="wrap fit-grid">
           <div className="fit-visual">
-            <img src="/media/fernanda-virada.webp" alt="Fones de ouvido sobre materiais de estudo" loading="lazy" decoding="async" />
+            <img src={`${asset}/media/fernanda-virada.webp`} alt="Fones de ouvido sobre materiais de estudo" loading="lazy" decoding="async" />
             <div className="time-badge"><strong>20</strong><span>minutos<br />por dia</span></div>
           </div>
           <div>
