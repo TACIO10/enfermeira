@@ -125,10 +125,13 @@ export default function Home() {
         <div className="hero-grid wrap">
           <div className="hero-copy">
             <h1>
-              <em>Memorize melhor</em> e pare de <em>esquecer ou confundir</em> os
-              conteúdos da sua prova de Enfermagem, mesmo chegando <em>exausto</em> e
-              sem disposição para estudar.
+              Memorize os assuntos mais cobrados dos concursos de
+              Enfermagem <em>10x mais rápido</em>
             </h1>
+            <p className="lead">
+              Comece a usar nosso app de música e pare de esquecer ou confundir os
+              conteúdos da sua prova de Enfermagem.
+            </p>
             <div
               className="hero-video"
               aria-label="Vídeo de apresentação do Método da Memória Musical"
@@ -137,10 +140,6 @@ export default function Home() {
                   '<vturb-smartplayer id="vid-6a8b16bc2d15b4a5d950c866" style="display:block;margin:0 auto;width:100%;max-width:400px"><div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black"></div></vturb-smartplayer>',
               }}
             />
-            <p className="lead">
-              Reforce os assuntos mais cobrados com músicas criadas para acompanhar
-              seus plantões, deslocamentos e os poucos minutos livres do dia.
-            </p>
             <div className="hero-actions">
               <button className="button primary" type="button" data-price-jump>
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
