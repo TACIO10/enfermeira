@@ -7,8 +7,6 @@ const asset = process.env.PAGES_BASE_PATH ?? "";
 const precoAnualMensal = "20,37";
 const parcelamentoAnual = `12x R$ ${precoAnualMensal}`;
 
-const essentialCheckout =
-  "https://checkout.payt.com.br/00866f9e635b46efd70d93bf8af772fa";
 const completeCheckout =
   "https://checkout.payt.com.br/b6a1d5de6e0101f3886464727fc6fb22?split=12";
 
@@ -373,50 +371,27 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <span className="eyebrow">Escolha seu acesso</span>
+            <span className="eyebrow">Seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
             <p>Seu desconto de 60% foi aplicado com sucesso.</p>
           </div>
 
           <div className="price-grid">
-            <article className="price-card essential-plan">
-              <span className="price-ribbon essential-ribbon">Para começar</span>
-              <span className="plan-tag">Plano Essencial</span>
-              <h3>Acesso ao Método da Memória Musical</h3>
-              <div className="single-price"><small>R$</small><strong>67</strong><small>,00</small><span className="price-period">/mês</span></div>
-              <p className="cash-price light-copy">cobrança mensal recorrente</p>
-              <ul>
-                <li>✓ Mais de 1.000 músicas</li>
-                <li>✓ Músicas baseadas nos editais de Enfermagem</li>
-                <li>✓ Biblioteca completa de músicas</li>
-                <li>✓ Playlists organizadas por disciplina</li>
-                <li>✓ Acesso pelo celular e computador</li>
-                <li>✓ Atualizações das músicas</li>
-              </ul>
-              <a
-                className="button price-button essential-button"
-                href={essentialCheckout}
-                data-goatcounter-click="checkout-plano-essencial-67"
-                data-goatcounter-title="Clique no checkout — Plano Essencial R$ 67"
-                data-goatcounter-no-session="1"
-              >
-                Assinar mensal por R$ 67 <span>→</span>
-              </a>
-            </article>
-
             <article className="price-card featured">
-              <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
               <div className="annual-price"><small>R$</small><strong>{precoAnualMensal}</strong><span>/mês</span></div>
               <p className="annual-payment">{`12x de R$ ${precoAnualMensal}`} no cartão · ou R$ 197 à vista</p>
               <span className="value-badge">70% mais barato que o mensal</span>
               <ul>
-                <li>✓ Tudo do Plano Essencial</li>
+                <li>✓ Mais de 1.000 músicas educativas</li>
+                <li>✓ Mais de 150 temas de Enfermagem</li>
+                <li>✓ Conteúdos para Enfermeiros, Técnicos e Residência</li>
+                <li>✓ Novas músicas e temas adicionados constantemente</li>
+                <li>✓ Acesso pelo celular e computador</li>
                 <li>✓ Checklist dos assuntos mais cobrados</li>
                 <li>✓ Banco de questões comentadas</li>
                 <li>✓ Comunidade exclusiva de alunos</li>
-                <li>✓ Novas disciplinas e atualizações</li>
                 <li>✓ Suporte prioritário</li>
               </ul>
               <a
