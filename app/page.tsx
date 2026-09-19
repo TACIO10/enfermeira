@@ -126,7 +126,7 @@ export default function Home() {
           <div className="hero-copy">
             <h1>
               <em>Memorize melhor</em> e pare de <em>esquecer ou confundir</em> os
-              conteúdos da sua prova de Enfermagem — mesmo chegando <em>exausto</em> e
+              conteúdos da sua prova de Enfermagem, mesmo chegando <em>exausto</em> e
               sem disposição para estudar.
             </h1>
             <div
