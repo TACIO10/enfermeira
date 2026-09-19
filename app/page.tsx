@@ -129,7 +129,7 @@ export default function Home() {
               aria-label="Vídeo de apresentação do Método da Memória Musical"
               dangerouslySetInnerHTML={{
                 __html:
-                  '<vturb-smartplayer id="vid-6aad733b059fedeb9e1f8bb7" style="display:block;margin:0 auto;width:100%;max-width:400px"><div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black"></div></vturb-smartplayer>',
+                  '<vturb-smartplayer id="vid-6a8b16bc2d15b4a5d950c866" style="display:block;margin:0 auto;width:100%;max-width:400px"><div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black"></div></vturb-smartplayer>',
               }}
             />
             <p className="lead">
