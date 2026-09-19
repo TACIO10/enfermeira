@@ -77,7 +77,7 @@ img { display: block; max-width: 100%; }
 .eyebrow.light { color: var(--lime); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { letter-spacing: -.04em; line-height: 1.05; }
-h1 { max-width: 720px; margin-bottom: 24px; font-size: clamp(42px, 6vw, 76px); }
+h1 { max-width: 720px; margin-bottom: 24px; font-size: clamp(38px, 4.4vw, 58px); }
 h1 em { color: var(--lime); font-family: Georgia, serif; font-weight: 400; }
 h2 { margin-bottom: 22px; font-size: clamp(36px, 5vw, 58px); }
 h3 { font-size: 25px; }

@@ -125,9 +125,9 @@ export default function Home() {
         <div className="hero-grid wrap">
           <div className="hero-copy">
             <h1>
-              Aprenda a memorizar os assuntos mais cobrados dos concursos de
-              Enfermagem em apenas <em>20 minutos por dia</em>, sem depender apenas
-              de PDFs e videoaulas.
+              <em>Memorize melhor</em> e pare de <em>esquecer ou confundir</em> os
+              conteúdos da sua prova de Enfermagem — mesmo chegando <em>exausto</em> e
+              sem disposição para estudar.
             </h1>
             <div
               className="hero-video"
