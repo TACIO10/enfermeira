@@ -1,6 +1,6 @@
 {
-  "_framework-XU8gKkFC.js": {
-    "file": "assets/framework-XU8gKkFC.js",
+  "_framework-DjPHiq1u.js": {
+    "file": "assets/framework-DjPHiq1u.js",
     "name": "framework",
     "imports": [
       "_rolldown-runtime-S-ySWqyJ.js"
@@ -10,40 +10,51 @@
     "file": "assets/rolldown-runtime-S-ySWqyJ.js",
     "name": "rolldown-runtime"
   },
+  "app/offer-bar.tsx": {
+    "file": "assets/offer-bar-DWb2D5L8.js",
+    "name": "offer-bar",
+    "src": "app/offer-bar.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-DjPHiq1u.js"
+    ]
+  },
   "app/testimonials-carousel.tsx": {
-    "file": "assets/testimonials-carousel-u09s3n1c.js",
+    "file": "assets/testimonials-carousel-HQDbNzXP.js",
     "name": "testimonials-carousel",
     "src": "app/testimonials-carousel.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-S-ySWqyJ.js",
-      "_framework-XU8gKkFC.js"
+      "_framework-DjPHiq1u.js"
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-CB_D70Cx.js",
+    "file": "assets/layout-segment-context-6S5Iahaa.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-S-ySWqyJ.js",
       "virtual:vinext-app-browser-entry",
-      "_framework-XU8gKkFC.js"
+      "_framework-DjPHiq1u.js"
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-BnTV3YeV.js",
+    "file": "assets/index-Bf1jk0tU.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
     "imports": [
       "_rolldown-runtime-S-ySWqyJ.js",
-      "_framework-XU8gKkFC.js"
+      "_framework-DjPHiq1u.js"
     ],
     "dynamicImports": [
       "node_modules/vinext/dist/shims/layout-segment-context.js",
       "virtual:vinext-app-browser-entry",
-      "app/testimonials-carousel.tsx"
+      "app/testimonials-carousel.tsx",
+      "app/offer-bar.tsx"
     ]
   }
 }

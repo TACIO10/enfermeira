@@ -14,6 +14,40 @@
   --white: #ffffff;
 }
 
+/* Barra de oferta fixa no topo. A altura precisa casar com o padding-top do
+   body, senao ela cobre o menu. Ha um segundo par no breakpoint de 620px. */
+.offer-bar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 8px 16px;
+  background: var(--mint);
+  color: var(--deep-2);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 2px 14px rgba(6, 42, 45, .22);
+}
+.offer-bar-inner { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.offer-clock {
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--deep-2);
+  color: var(--lime);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  font-weight: 900;
+}
+.offer-sep { opacity: .5; }
+.offer-bar strong { font-weight: 900; }
+body { padding-top: 46px; }
+/* Sem isso a barra fixa cobre o topo da secao ao pular pelos links internos. */
+[id] { scroll-margin-top: 58px; }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: auto; overflow-anchor: none; }
 body, main { overflow-anchor: none; }
@@ -346,6 +380,11 @@ footer { padding: 45px 0; background: #051f23; color: #aec2bd; }
 }
 
 @media (max-width: 620px) {
+  .offer-bar { min-height: 40px; padding: 7px 10px; font-size: 12px; }
+  .offer-bar-inner { gap: 7px; }
+  .offer-clock { padding: 2px 7px; font-size: 12px; }
+  .offer-plan { display: none; }
+  body { padding-top: 40px; }
   .wrap { width: min(100% - 26px, 1160px); }
   .nav { display: none; }
   .nav-link { display: none; }

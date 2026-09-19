@@ -1,7 +1,11 @@
+import { OfferBar } from "./offer-bar";
 import { TestimonialsCarousel } from "./testimonials-carousel";
 
 // Vazio no build padrao; "/enfermeira" no build do GitHub Pages.
 const asset = process.env.PAGES_BASE_PATH ?? "";
+
+const precoAnualMensal = "20,37";
+const parcelamentoAnual = `12x R$ ${precoAnualMensal}`;
 
 const essentialCheckout =
   "https://checkout.payt.com.br/00866f9e635b46efd70d93bf8af772fa";
@@ -107,6 +111,8 @@ const bonuses = [
 export default function Home() {
   return (
     <main>
+      <OfferBar parcelamento={parcelamentoAnual} />
+
       <section className="hero" id="inicio">
         <nav className="nav wrap">
           <a className="brand" href="#inicio" aria-label="Memória Musical — início">
@@ -118,7 +124,6 @@ export default function Home() {
 
         <div className="hero-grid wrap">
           <div className="hero-copy">
-            <span className="eyebrow light">Para concursos de enfermagem</span>
             <h1>
               Aprenda a memorizar os assuntos mais cobrados dos concursos de
               Enfermagem em apenas <em>20 minutos por dia</em>, sem depender apenas
@@ -404,8 +409,8 @@ export default function Home() {
               <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
-              <div className="annual-price"><small>R$</small><strong>20,37</strong><span>/mês</span></div>
-              <p className="annual-payment">12x de R$ 20,37 no cartão · ou R$ 197 à vista</p>
+              <div className="annual-price"><small>R$</small><strong>{precoAnualMensal}</strong><span>/mês</span></div>
+              <p className="annual-payment">{`12x de R$ ${precoAnualMensal}`} no cartão · ou R$ 197 à vista</p>
               <span className="value-badge">70% mais barato que o mensal</span>
               <ul>
                 <li>✓ Tudo do Plano Essencial</li>
