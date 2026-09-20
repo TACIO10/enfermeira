@@ -4,9 +4,12 @@ import { TestimonialsCarousel } from "./testimonials-carousel";
 // Vazio no build padrao; "/enfermeira" no build do GitHub Pages.
 const asset = process.env.PAGES_BASE_PATH ?? "";
 
+const precoMensal = "67";
 const precoAnualMensal = "20,37";
 const parcelamentoAnual = `12x R$ ${precoAnualMensal}`;
 
+const essentialCheckout =
+  "https://checkout.payt.com.br/00866f9e635b46efd70d93bf8af772fa";
 const completeCheckout =
   "https://checkout.payt.com.br/b6a1d5de6e0101f3886464727fc6fb22?split=12";
 
@@ -371,13 +374,36 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <span className="eyebrow">Seu acesso</span>
+            <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
             <p>Seu desconto de 60% foi aplicado com sucesso.</p>
           </div>
 
           <div className="price-grid">
+            <article className="price-card essential-plan">
+              <span className="price-ribbon essential-ribbon">Para começar</span>
+              <span className="plan-tag">Plano Essencial</span>
+              <h3>Acesso ao Método da Memória Musical</h3>
+              <div className="single-price"><small>R$</small><strong>{precoMensal}</strong><small>,00</small><span className="price-period">/mês</span></div>
+              <p className="cash-price light-copy">cobrança mensal recorrente</p>
+              <ul>
+                <li>✓ Mais de 1.000 músicas educativas</li>
+                <li>✓ Mais de 150 temas de Enfermagem</li>
+                <li>✓ Acesso pelo celular e computador</li>
+              </ul>
+              <a
+                className="button price-button essential-button"
+                href={essentialCheckout}
+                data-goatcounter-click="checkout-plano-essencial-67"
+                data-goatcounter-title="Clique no checkout — Plano Essencial R$ 67"
+                data-goatcounter-no-session="1"
+              >
+                Assinar mensal por R$ {precoMensal} <span>→</span>
+              </a>
+            </article>
+
             <article className="price-card featured">
+              <span className="price-ribbon complete-ribbon">Melhor escolha</span>
               <span className="plan-tag">Anual · Plano Completo</span>
               <h3>Todo o método e todos os bônus</h3>
               <div className="annual-price"><small>R$</small><strong>{precoAnualMensal}</strong><span>/mês</span></div>
