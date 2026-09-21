@@ -302,6 +302,34 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="concursos section soft" aria-labelledby="concursos-title">
+        <div className="wrap narrow">
+          <div className="section-heading center">
+            <span className="eyebrow">Para quais concursos?</span>
+            <h2 id="concursos-title">O Memória Musical serve para a sua preparação em Enfermagem.</h2>
+            <p>Desenvolvido para quem está se preparando para concursos e processos seletivos de Enfermagem em todo o Brasil.</p>
+          </div>
+          <div className="concursos-list" role="list" aria-label="Concursos e processos seletivos atendidos">
+            {[
+              "EBSERH / HU Brasil",
+              "Transpetro",
+              "Secretarias Estaduais de Saúde (SES)",
+              "Secretarias Municipais de Saúde (SMS)",
+              "Prefeituras Municipais",
+              "Forças Armadas — Exército, Marinha e Aeronáutica",
+              "Polícia Militar e Corpo de Bombeiros — Área da Saúde",
+              "Universidades Federais e Estaduais",
+              "Institutos Federais",
+              "Hospitais Públicos e Hospitais Universitários",
+              "Residências Multiprofissionais",
+            ].map((concurso) => (
+              <p key={concurso} role="listitem">✓ {concurso}</p>
+            ))}
+          </div>
+          <p className="concursos-note">E muitos outros concursos da área da Enfermagem.</p>
+        </div>
+      </section>
+
       <section className="comparison section dark">
         <div className="wrap">
           <div className="section-heading center light-heading">
