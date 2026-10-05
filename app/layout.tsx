@@ -38,11 +38,11 @@ export default function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
         <script
-          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-          data-utmify-prevent-xcod-sck=""
-          data-utmify-prevent-subids=""
-          async
           defer
+          src="https://cdn.raadstag.com/tag.js"
+          data-tag-id="12333-91460ed26f1e492ab67bddf8ae1a6acf"
+          data-event-host="api.raadstag.com"
+          data-plat-params="utm_source,utm_medium,utm_content,utm_term"
         />
         <script
           data-goatcounter="https://enfermeiro.goatcounter.com/count"
