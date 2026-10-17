@@ -426,7 +426,7 @@ export default function Home() {
                 data-goatcounter-title="Clique no checkout — Plano Essencial R$ 67"
                 data-goatcounter-no-session="1"
               >
-                Assinar mensal por R$ {precoMensal} <span>→</span>
+                Assinar mensal por R$ {precoMensal}
               </a>
             </article>
 
@@ -455,7 +455,7 @@ export default function Home() {
                 data-goatcounter-title="Clique no checkout — Plano Completo R$ 197"
                 data-goatcounter-no-session="1"
               >
-                Quero o Plano Completo <span>→</span>
+                Quero o Plano Completo
               </a>
             </article>
           </div>
