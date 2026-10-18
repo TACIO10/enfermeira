@@ -1,5 +1,6 @@
 import { OfferBar } from "./offer-bar";
 import { TestimonialsCarousel } from "./testimonials-carousel";
+import { VturbPlayer } from "./vturb-player";
 
 // Vazio no build padrao; "/enfermeira" no build do GitHub Pages.
 const asset = process.env.PAGES_BASE_PATH ?? "";
@@ -133,14 +134,7 @@ export default function Home() {
               Comece a usar nosso app de música e pare de esquecer ou confundir os
               conteúdos da sua prova de Enfermagem.
             </p>
-            <div
-              className="hero-video"
-              aria-label="Vídeo de apresentação do Método da Memória Musical"
-              dangerouslySetInnerHTML={{
-                __html:
-                  '<vturb-smartplayer id="vid-6a8b16bc2d15b4a5d950c866" style="display:block;margin:0 auto;width:100%;max-width:400px"><div class="vturb-player-placeholder" style="position:relative;width:100%;padding:177.77777777777777% 0 0;z-index:0;background-color:black"></div></vturb-smartplayer>',
-              }}
-            />
+            <VturbPlayer />
             <div className="hero-actions">
               <button className="button primary" type="button" data-price-jump>
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato

@@ -50,10 +50,6 @@ export default function RootLayout({
           async
         />
         <script
-          src="https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6a8b16bc2d15b4a5d950c866/v4/player.js"
-          async
-        />
-        <script
           dangerouslySetInnerHTML={{
             __html:
               'document.addEventListener("click",function(event){var button=event.target.closest("[data-price-jump]");if(!button)return;var target=document.getElementById("oferta");if(!target)return;target.scrollIntoView({behavior:"auto",block:"start"});});',
