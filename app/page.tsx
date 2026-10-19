@@ -128,7 +128,8 @@ export default function Home() {
           <div className="hero-copy">
             <h1>
               Quer passar na <strong>EBSERH, Secretarias de Saúde, Prefeituras ou
-              Transpetro?</strong> Memorize o que é <strong>cobrado nas bancas!</strong>
+              Transpetro?</strong> Descubra como memorizar os assuntos de Enfermagem
+              que realmente são <strong>cobrados nas Bancas!</strong>
             </h1>
             <p className="lead">
               Comece a usar nosso app de música e pare de esquecer ou confundir os
