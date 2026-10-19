@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 
-const playerId = "vid-6a8b16bc2d15b4a5d950c866";
+const playerId = "vid-6ad67a31cd9a495013698104";
 const playerScript =
-  "https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6a8b16bc2d15b4a5d950c866/v4/player.js";
+  "https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6ad67a31cd9a495013698104/v4/player.js";
 
 export function VturbPlayer() {
   useEffect(() => {
