@@ -127,8 +127,9 @@ export default function Home() {
         <div className="hero-grid wrap">
           <div className="hero-copy">
             <h1>
-              Memorize os assuntos mais cobrados dos concursos de
-              Enfermagem <em>10x mais rápido</em>
+              Quer passar na <strong>EBSERH, Secretarias de Saúde, Prefeituras ou
+              Transpetro?</strong> Descubra como memorizar os assuntos de Enfermagem
+              que realmente são <strong>cobrados nas Bancas!</strong>
             </h1>
             <p className="lead">
               Comece a usar nosso app de música e pare de esquecer ou confundir os
