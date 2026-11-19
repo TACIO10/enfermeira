@@ -34,7 +34,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    // As duas classes saem no 1:03 e no 1:15 do video (app/vsl-delay.tsx).
+    // Ficam no <html> desde o HTML do servidor para nao existir um instante
+    // com a pagina inteira na tela antes do JS rodar.
+    <html lang="pt-BR" className="vsl-travado vsl-barra-travada">
       <head>
         <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
         <script

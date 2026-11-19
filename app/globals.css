@@ -33,15 +33,21 @@
   box-shadow: 0 2px 14px rgba(6, 42, 45, .22);
 }
 
-/* Delay da VSL: a pagina abaixo do video e a barra de oferta comecam
-   escondidas e so aparecem no momento certo do video - 1:03 para o conteudo,
-   1:15 para a barra com o preco. Quem libera e o app/vsl-delay.tsx, que
-   escreve display inline. Fica tudo no HTML desde o inicio, so com
-   display:none, entao o Google continua lendo a pagina inteira.
-   Estas duas regras vem depois do bloco acima de proposito: o `display:flex`
-   dali ganharia se viessem antes. */
-.vsl-oculto { display: none; }
-.offer-bar { display: none; }
+/* Delay da VSL: tudo que fica abaixo do video comeca escondido e aparece no
+   1:03 do video; a barra com o preco, no 1:15. Quem libera e o
+   app/vsl-delay.tsx, tirando as classes do <html>.
+   O esconde-esconde mora aqui, no <html>, e nao no style de cada elemento:
+   assim cada um volta com o display que ja era dele. Escondendo um por um a
+   gente teria que lembrar que .hero-actions e .hero-proof sao flex - voltariam
+   como block e os itens empilhariam.
+   O conteudo continua no HTML desde o inicio, so com display:none, entao o
+   Google le a pagina inteira. */
+.vsl-travado .vsl-oculto { display: none !important; }
+.vsl-barra-travada .offer-bar { display: none !important; }
+/* O espaco reservado para a barra fixa so vale enquanto ela esta na tela.
+   Com !important para nao depender de vir depois do `body { padding-top }`
+   logo abaixo nem da versao dele dentro do @media de 900px. */
+.vsl-barra-travada body { padding-top: 0 !important; }
 
 .offer-bar-inner { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
 .offer-clock {
@@ -55,10 +61,7 @@
 }
 .offer-sep { opacity: .5; }
 .offer-bar strong { font-weight: 900; }
-/* O espaco da barra fixa so existe quando a barra existe: ate o 1:15 do
-   video ela esta escondida, e sem isso sobraria uma faixa vazia no topo.
-   Quem poe a classe e o app/vsl-delay.tsx, junto com a barra. */
-body.barra-visivel { padding-top: 46px; }
+body { padding-top: 46px; }
 /* Sem isso a barra fixa cobre o topo da secao ao pular pelos links internos. */
 [id] { scroll-margin-top: 58px; }
 
@@ -406,7 +409,7 @@ footer { padding: 45px 0; background: #051f23; color: #aec2bd; }
   .offer-bar-inner { gap: 7px; }
   .offer-clock { padding: 2px 7px; font-size: 12px; }
   .offer-plan { display: none; }
-  body.barra-visivel { padding-top: 40px; }
+  body { padding-top: 40px; }
   .wrap { width: min(100% - 26px, 1160px); }
   .nav { display: none; }
   .nav-link { display: none; }

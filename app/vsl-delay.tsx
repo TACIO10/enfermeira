@@ -21,8 +21,8 @@ const SOCORRO_MS = 3 * 60 * 1000;
 // sentido segurar a pagina esperando um pitch que nao vem.
 const ESPERA_PLAYER_MS = 10 * 1000;
 
-const SELETOR_CONTEUDO = ".vsl-oculto";
-const SELETOR_BARRA = ".offer-bar";
+const TRAVA_CONTEUDO = "vsl-travado";
+const TRAVA_BARRA = "vsl-barra-travada";
 
 type Player = HTMLElement & {
   currentTime?: number;
@@ -33,26 +33,16 @@ type Player = HTMLElement & {
   ) => void;
 };
 
-/** A barra e fixa: o espaco dela no topo so vale enquanto ela esta na tela. */
-function marcarBarraVisivel() {
-  document.body.classList.add("barra-visivel");
-}
+// Liberar e tirar a classe do <html>: cada elemento volta com o display que
+// ja era dele. Mexer no style de cada um exigiria saber quais sao flex.
+const soltarConteudo = () =>
+  document.documentElement.classList.remove(TRAVA_CONTEUDO);
+const soltarBarra = () =>
+  document.documentElement.classList.remove(TRAVA_BARRA);
 
-/**
- * O player escreve `display: <valor> !important` no style do elemento, e o
- * padrao dele e `block`. A barra e flex: sem dizer isso aqui, ela voltaria
- * como block e os itens dela empilhariam.
- */
-function revelar(seletor: string, display: string) {
-  document.querySelectorAll<HTMLElement>(seletor).forEach((el) => {
-    el.style.setProperty("display", display, "important");
-  });
-}
-
-function revelarTudo() {
-  revelar(SELETOR_CONTEUDO, "block");
-  revelar(SELETOR_BARRA, "flex");
-  marcarBarraVisivel();
+function soltarTudo() {
+  soltarConteudo();
+  soltarBarra();
 }
 
 export function VslDelay() {
@@ -63,31 +53,33 @@ export function VslDelay() {
     const ligar = () => {
       const player = document.querySelector<Player>("vturb-smartplayer");
 
-      // `persist` faz o player lembrar que esta pessoa ja liberou: quem volta
-      // amanha nao precisa assistir de novo para ver a oferta.
-      if (player?.displayHiddenElements) {
-        player.displayHiddenElements(TEMPO_CONTEUDO, [SELETOR_CONTEUDO], {
-          persist: true,
-        });
-        player.displayHiddenElements(TEMPO_BARRA, [SELETOR_BARRA], {
-          persist: true,
-          display: "flex",
-          callback: marcarBarraVisivel,
-        });
-      } else {
-        // Player nao carregou (CDN fora do ar, bloqueador). Sem isso a pagina
-        // ficaria vazia: melhor mostrar tudo do que nao mostrar nada.
-        revelarTudo();
+      if (!player?.displayHiddenElements) {
+        // Player nao carregou. Sem video nao existe pitch para esperar:
+        // melhor mostrar tudo do que nao mostrar nada.
+        soltarTudo();
         return;
       }
+
+      // A lista de seletores vai vazia de proposito: quem esconde e mostra e
+      // a classe no <html>, entao aqui o player serve so de relogio do video.
+      // `persist` faz ele lembrar que esta pessoa ja liberou: quem volta
+      // amanha nao precisa assistir de novo para ver a oferta.
+      player.displayHiddenElements(TEMPO_CONTEUDO, [], {
+        persist: true,
+        callback: soltarConteudo,
+      });
+      player.displayHiddenElements(TEMPO_BARRA, [], {
+        persist: true,
+        callback: soltarBarra,
+      });
 
       // O video nem comecou depois de VIGIA_MS? Entao nao vai comecar:
       // ou a pessoa ja assistiu, ou o autoplay foi barrado. Libera.
       vigia = window.setTimeout(() => {
-        if (!player.currentTime) revelarTudo();
+        if (!player.currentTime) soltarTudo();
       }, VIGIA_MS);
 
-      socorro = window.setTimeout(revelarTudo, SOCORRO_MS);
+      socorro = window.setTimeout(soltarTudo, SOCORRO_MS);
     };
 
     // O script do player entra depois da montagem; espera o custom element,
@@ -99,7 +91,7 @@ export function VslDelay() {
       const espera = window.setTimeout(() => {
         if (decidido) return;
         decidido = true;
-        revelarTudo();
+        soltarTudo();
       }, ESPERA_PLAYER_MS);
 
       customElements.whenDefined("vturb-smartplayer").then(() => {
@@ -110,13 +102,14 @@ export function VslDelay() {
       });
     }
 
-    // Quem ja chegou decidido clica no botao do topo e abre a pagina na hora,
-    // sem esperar o video. O handler antigo so rolava ate #oferta, que estava
-    // escondido - rolar para um display:none nao sai do lugar.
+    // Depois de liberada, o botao de compra rola ate os planos - era o que o
+    // script inline do layout.tsx fazia. Aqui ele tambem destrava antes de
+    // rolar, porque rolar ate um display:none nao sai do lugar. Vale para o
+    // "Ver planos" do topo, que fica visivel o tempo todo no computador.
     const aoClicar = (evento: MouseEvent) => {
       const alvo = evento.target as HTMLElement | null;
-      if (!alvo?.closest("[data-price-jump]")) return;
-      revelarTudo();
+      if (!alvo?.closest('[data-price-jump], a[href="#oferta"]')) return;
+      soltarTudo();
       requestAnimationFrame(() => {
         document
           .getElementById("oferta")

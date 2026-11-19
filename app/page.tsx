@@ -138,20 +138,20 @@ export default function Home() {
               conteúdos da sua prova de Enfermagem.
             </p>
             <VturbPlayer />
-            <div className="hero-actions">
+            <div className="hero-actions vsl-oculto">
               <button className="button primary" type="button" data-price-jump>
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </button>
               <span className="microcopy">Sem cadastro · Dê o play agora</span>
             </div>
-            <div className="hero-proof">
+            <div className="hero-proof vsl-oculto">
               <span>✓ Acesso imediato</span>
               <span>✓ Celular e computador</span>
               <span>✓ Garantia de 7 dias</span>
             </div>
           </div>
 
-          <div className="hero-visual">
+          <div className="hero-visual vsl-oculto">
             <div className="visual-orbit orbit-one" />
             <div className="visual-orbit orbit-two" />
             <img
