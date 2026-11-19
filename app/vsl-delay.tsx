@@ -6,6 +6,9 @@ import { useEffect } from "react";
 const TEMPO_CONTEUDO = 63; // 1:03 - quando a VSL manda escolher o plano
 const TEMPO_BARRA = 75; // 1:15 - a barra com o preco entra depois
 
+// De quanto em quanto tempo olhamos o relogio do video.
+const INTERVALO_MS = 400;
+
 // Se o video nao andar, o 1:03 nunca chega e a pagina fica trancada. O caso
 // mais comum nao e autoplay bloqueado: e quem JA assistiu. O player mostra
 // "Voce ja assistiu a este video" e nao toca nada, entao o tempo fica em 0
@@ -16,22 +19,16 @@ const VIGIA_MS = 20 * 1000;
 // E se o video comecar mas travar no meio, libera depois deste tempo.
 const SOCORRO_MS = 3 * 60 * 1000;
 
-// Quanto esperar o script do player aparecer. Se passou disso, ele foi
-// bloqueado (adblock, CDN fora) e o video nao vai tocar nunca - nao faz
-// sentido segurar a pagina esperando um pitch que nao vem.
+// Quanto esperar o player aparecer. Se passou disso, foi bloqueado (adblock,
+// CDN fora) e o video nao vai tocar nunca - nao faz sentido segurar a pagina
+// esperando um pitch que nao vem.
 const ESPERA_PLAYER_MS = 10 * 1000;
 
 const TRAVA_CONTEUDO = "vsl-travado";
 const TRAVA_BARRA = "vsl-barra-travada";
+const CHAVE_LIBERADO = "mm-vsl-liberado";
 
-type Player = HTMLElement & {
-  currentTime?: number;
-  displayHiddenElements?: (
-    segundos: number,
-    seletores: string[],
-    opcoes?: { persist?: boolean; display?: string; callback?: () => void },
-  ) => void;
-};
+type Player = HTMLElement & { currentTime?: number };
 
 // Liberar e tirar a classe do <html>: cada elemento volta com o display que
 // ja era dele. Mexer no style de cada um exigiria saber quais sao flex.
@@ -45,41 +42,82 @@ function soltarTudo() {
   soltarBarra();
 }
 
+/** Quem ja liberou uma vez nao assiste de novo para ver a oferta. */
+function marcarLiberado() {
+  try {
+    localStorage.setItem(CHAVE_LIBERADO, "1");
+  } catch {
+    // Navegacao anonima ou storage bloqueado: so perde o atalho.
+  }
+}
+
+function jaLiberouAntes() {
+  try {
+    return localStorage.getItem(CHAVE_LIBERADO) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export function VslDelay() {
   useEffect(() => {
+    if (jaLiberouAntes()) {
+      soltarTudo();
+      return;
+    }
+
+    let relogio: number | undefined;
     let socorro: number | undefined;
     let vigia: number | undefined;
+
+    const limpar = () => {
+      if (relogio) window.clearInterval(relogio);
+      if (socorro) window.clearTimeout(socorro);
+      if (vigia) window.clearTimeout(vigia);
+    };
+
+    const acabou = () => {
+      marcarLiberado();
+      limpar();
+    };
 
     const ligar = () => {
       const player = document.querySelector<Player>("vturb-smartplayer");
 
-      if (!player?.displayHiddenElements) {
-        // Player nao carregou. Sem video nao existe pitch para esperar:
-        // melhor mostrar tudo do que nao mostrar nada.
+      if (!player) {
+        // Sem video nao existe pitch para esperar: melhor mostrar tudo do
+        // que nao mostrar nada.
         soltarTudo();
+        acabou();
         return;
       }
 
-      // A lista de seletores vai vazia de proposito: quem esconde e mostra e
-      // a classe no <html>, entao aqui o player serve so de relogio do video.
-      // `persist` faz ele lembrar que esta pessoa ja liberou: quem volta
-      // amanha nao precisa assistir de novo para ver a oferta.
-      player.displayHiddenElements(TEMPO_CONTEUDO, [], {
-        persist: true,
-        callback: soltarConteudo,
-      });
-      player.displayHiddenElements(TEMPO_BARRA, [], {
-        persist: true,
-        callback: soltarBarra,
-      });
+      // Lemos o relogio do video em vez de pedir ao player que avise.
+      // O displayHiddenElements/onTime dele so vale se for registrado depois
+      // que o player fica pronto; registrado antes, some sem erro nenhum - e
+      // a pagina ficava trancada com o video rodando ate o fim.
+      relogio = window.setInterval(() => {
+        const t = player.currentTime ?? 0;
+        if (t >= TEMPO_CONTEUDO) soltarConteudo();
+        if (t >= TEMPO_BARRA) {
+          soltarBarra();
+          acabou();
+        }
+      }, INTERVALO_MS);
 
       // O video nem comecou depois de VIGIA_MS? Entao nao vai comecar:
       // ou a pessoa ja assistiu, ou o autoplay foi barrado. Libera.
       vigia = window.setTimeout(() => {
-        if (!player.currentTime) soltarTudo();
+        if (!player.currentTime) {
+          soltarTudo();
+          acabou();
+        }
       }, VIGIA_MS);
 
-      socorro = window.setTimeout(soltarTudo, SOCORRO_MS);
+      socorro = window.setTimeout(() => {
+        soltarTudo();
+        acabou();
+      }, SOCORRO_MS);
     };
 
     // O script do player entra depois da montagem; espera o custom element,
@@ -92,6 +130,7 @@ export function VslDelay() {
         if (decidido) return;
         decidido = true;
         soltarTudo();
+        marcarLiberado();
       }, ESPERA_PLAYER_MS);
 
       customElements.whenDefined("vturb-smartplayer").then(() => {
@@ -110,6 +149,7 @@ export function VslDelay() {
       const alvo = evento.target as HTMLElement | null;
       if (!alvo?.closest('[data-price-jump], a[href="#oferta"]')) return;
       soltarTudo();
+      acabou();
       requestAnimationFrame(() => {
         document
           .getElementById("oferta")
@@ -120,8 +160,7 @@ export function VslDelay() {
     document.addEventListener("click", aoClicar);
     return () => {
       document.removeEventListener("click", aoClicar);
-      if (socorro) window.clearTimeout(socorro);
-      if (vigia) window.clearTimeout(vigia);
+      limpar();
     };
   }, []);
 
