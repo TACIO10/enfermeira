@@ -49,12 +49,9 @@ export default function RootLayout({
           src="https://gc.zgo.at/count.js"
           async
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              'document.addEventListener("click",function(event){var button=event.target.closest("[data-price-jump]");if(!button)return;var target=document.getElementById("oferta");if(!target)return;target.scrollIntoView({behavior:"auto",block:"start"});});',
-          }}
-        />
+        {/* O clique no botao de compra agora e tratado pelo app/vsl-delay.tsx,
+            que precisa liberar a pagina antes de rolar: rolar ate um
+            display:none nao sai do lugar. */}
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{

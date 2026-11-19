@@ -32,6 +32,17 @@
   text-decoration: none;
   box-shadow: 0 2px 14px rgba(6, 42, 45, .22);
 }
+
+/* Delay da VSL: a pagina abaixo do video e a barra de oferta comecam
+   escondidas e so aparecem no momento certo do video - 1:03 para o conteudo,
+   1:15 para a barra com o preco. Quem libera e o app/vsl-delay.tsx, que
+   escreve display inline. Fica tudo no HTML desde o inicio, so com
+   display:none, entao o Google continua lendo a pagina inteira.
+   Estas duas regras vem depois do bloco acima de proposito: o `display:flex`
+   dali ganharia se viessem antes. */
+.vsl-oculto { display: none; }
+.offer-bar { display: none; }
+
 .offer-bar-inner { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
 .offer-clock {
   padding: 3px 10px;
@@ -44,7 +55,10 @@
 }
 .offer-sep { opacity: .5; }
 .offer-bar strong { font-weight: 900; }
-body { padding-top: 46px; }
+/* O espaco da barra fixa so existe quando a barra existe: ate o 1:15 do
+   video ela esta escondida, e sem isso sobraria uma faixa vazia no topo.
+   Quem poe a classe e o app/vsl-delay.tsx, junto com a barra. */
+body.barra-visivel { padding-top: 46px; }
 /* Sem isso a barra fixa cobre o topo da secao ao pular pelos links internos. */
 [id] { scroll-margin-top: 58px; }
 
@@ -392,7 +406,7 @@ footer { padding: 45px 0; background: #051f23; color: #aec2bd; }
   .offer-bar-inner { gap: 7px; }
   .offer-clock { padding: 2px 7px; font-size: 12px; }
   .offer-plan { display: none; }
-  body { padding-top: 40px; }
+  body.barra-visivel { padding-top: 40px; }
   .wrap { width: min(100% - 26px, 1160px); }
   .nav { display: none; }
   .nav-link { display: none; }

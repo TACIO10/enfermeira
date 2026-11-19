@@ -1,6 +1,7 @@
 import { OfferBar } from "./offer-bar";
 import { TestimonialsCarousel } from "./testimonials-carousel";
 import { VturbPlayer } from "./vturb-player";
+import { VslDelay } from "./vsl-delay";
 
 // Vazio no build padrao; "/enfermeira" no build do GitHub Pages.
 const asset = process.env.PAGES_BASE_PATH ?? "";
@@ -113,6 +114,7 @@ const bonuses = [
 export default function Home() {
   return (
     <main>
+      <VslDelay />
       <OfferBar parcelamento={parcelamentoAnual} />
 
       <section className="hero" id="inicio">
@@ -167,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="problem section">
+      <section className="problem section vsl-oculto">
         <div className="wrap narrow">
           <span className="eyebrow">A frustração é conhecida</span>
           <h2>Você estudou. Mas, na prova, a resposta simplesmente não veio.</h2>
@@ -179,7 +181,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mechanism section dark">
+      <section className="mechanism section dark vsl-oculto">
         <div className="wrap mechanism-grid">
           <div>
             <span className="eyebrow light">O mecanismo</span>
@@ -207,7 +209,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="listen section" id="experimente">
+      <section className="listen section vsl-oculto" id="experimente">
         <div className="wrap narrow">
           <div className="section-heading center listen-heading">
             <span className="eyebrow light">Amostras gratuitas</span>
@@ -242,7 +244,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="fit section">
+      <section className="fit section vsl-oculto">
         <div className="wrap fit-grid">
           <div className="fit-visual">
             <img src={`${asset}/media/fernanda-virada.webp`} alt="Fones de ouvido sobre materiais de estudo" loading="lazy" decoding="async" />
@@ -268,7 +270,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contents section" id="conteudos">
+      <section className="contents section vsl-oculto" id="conteudos">
         <div className="wrap">
           <div className="section-heading center">
             <span className="eyebrow">Dentro da plataforma</span>
@@ -297,7 +299,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="concursos section soft" aria-labelledby="concursos-title">
+      <section className="concursos section soft vsl-oculto" aria-labelledby="concursos-title">
         <div className="wrap narrow">
           <div className="section-heading center">
             <span className="eyebrow">Para quais concursos?</span>
@@ -325,7 +327,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="comparison section dark">
+      <section className="comparison section dark vsl-oculto">
         <div className="wrap">
           <div className="section-heading center light-heading">
             <span className="eyebrow light">Menos atrito, mais frequência</span>
@@ -359,7 +361,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bonuses section">
+      <section className="bonuses section vsl-oculto">
         <div className="wrap">
           <div className="section-heading split-heading">
             <div>
@@ -384,7 +386,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="testimonials section soft">
+      <section className="testimonials section soft vsl-oculto">
         <div className="wrap">
           <div className="section-heading center">
             <span className="eyebrow">Experiência de alunas</span>
@@ -394,7 +396,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pricing section" id="oferta">
+      <section className="pricing section vsl-oculto" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
             <span className="eyebrow">Escolha seu acesso</span>
@@ -458,7 +460,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="guarantee section dark">
+      <section className="guarantee section dark vsl-oculto">
         <div className="wrap guarantee-grid">
           <div className="guarantee-seal"><strong>7</strong><span>DIAS</span></div>
           <div>
@@ -473,7 +475,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="faq section">
+      <section className="faq section vsl-oculto">
         <div className="wrap narrow">
           <div className="section-heading">
             <span className="eyebrow">Perguntas frequentes</span>
@@ -563,7 +565,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="whatsapp-support" aria-labelledby="whatsapp-support-title">
+      <section className="whatsapp-support vsl-oculto" aria-labelledby="whatsapp-support-title">
         <div className="wrap narrow whatsapp-support-inner">
           <span className="eyebrow">Atendimento</span>
           <h2 id="whatsapp-support-title">Ainda ficou com alguma dúvida?</h2>
