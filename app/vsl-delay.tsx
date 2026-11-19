@@ -6,9 +6,14 @@ import { useEffect } from "react";
 const TEMPO_CONTEUDO = 63; // 1:03 - quando a VSL manda escolher o plano
 const TEMPO_BARRA = 75; // 1:15 - a barra com o preco entra depois
 
-// Rede de seguranca: se o video nao tocar (autoplay bloqueado, a pessoa nunca
-// deu play), o player nunca chega no 1:03 e a pagina ficaria so com o video,
-// para sempre. Depois deste tempo de PAGINA tudo aparece de qualquer jeito.
+// Se o video nao andar, o 1:03 nunca chega e a pagina fica trancada. O caso
+// mais comum nao e autoplay bloqueado: e quem JA assistiu. O player mostra
+// "Voce ja assistiu a este video" e nao toca nada, entao o tempo fica em 0
+// para sempre. Depois deste tempo de PAGINA sem o video sair do lugar,
+// libera tudo.
+const VIGIA_MS = 20 * 1000;
+
+// E se o video comecar mas travar no meio, libera depois deste tempo.
 const SOCORRO_MS = 3 * 60 * 1000;
 
 // Quanto esperar o script do player aparecer. Se passou disso, ele foi
@@ -20,6 +25,7 @@ const SELETOR_CONTEUDO = ".vsl-oculto";
 const SELETOR_BARRA = ".offer-bar";
 
 type Player = HTMLElement & {
+  currentTime?: number;
   displayHiddenElements?: (
     segundos: number,
     seletores: string[],
@@ -52,6 +58,7 @@ function revelarTudo() {
 export function VslDelay() {
   useEffect(() => {
     let socorro: number | undefined;
+    let vigia: number | undefined;
 
     const ligar = () => {
       const player = document.querySelector<Player>("vturb-smartplayer");
@@ -73,6 +80,12 @@ export function VslDelay() {
         revelarTudo();
         return;
       }
+
+      // O video nem comecou depois de VIGIA_MS? Entao nao vai comecar:
+      // ou a pessoa ja assistiu, ou o autoplay foi barrado. Libera.
+      vigia = window.setTimeout(() => {
+        if (!player.currentTime) revelarTudo();
+      }, VIGIA_MS);
 
       socorro = window.setTimeout(revelarTudo, SOCORRO_MS);
     };
@@ -115,6 +128,7 @@ export function VslDelay() {
     return () => {
       document.removeEventListener("click", aoClicar);
       if (socorro) window.clearTimeout(socorro);
+      if (vigia) window.clearTimeout(vigia);
     };
   }, []);
 

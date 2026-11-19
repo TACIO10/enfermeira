@@ -581,7 +581,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
+      <footer className="vsl-oculto">
         <div className="wrap footer-inner">
           <a className="brand" href="#inicio"><span className="brand-mark">♪</span><span>MEMÓRIA MUSICAL</span></a>
           <p>© 2026 Método da Memória Musical. Todos os direitos reservados.</p>
